@@ -48,23 +48,23 @@ class PizzaList extends Component{
     this.handleDelete = this.handleDelete.bind(this);
   }
 
-  componentDidMount(){
-    Axios.get('http://localhost:5000/pizza')
-    .then(res => {
-      if(res.data.length >0){
-        this.setState({pizza: res.data})
-      }
-    });
-    Axios({
-      method: "GET",
-      withCredentials: true,
-      url: "http://localhost:5000/user",
-    }).then((res) => {
-      this.setState({user: res.data});
-      console.log(res.data);
-    });
-    console.log(this.state.pizza)
-  }
+  // componentDidMount(){
+  //   Axios.get('http://localhost:5000/pizza')
+  //   .then(res => {
+  //     if(res.data.length >0){
+  //       this.setState({pizza: res.data})
+  //     }
+  //   });
+  //   Axios({
+  //     method: "GET",
+  //     withCredentials: true,
+  //     url: "http://localhost:5000/user",
+  //   }).then((res) => {
+  //     this.setState({user: res.data});
+  //     console.log(res.data);
+  //   });
+  //   console.log(this.state.pizza)
+  // }
 
   handleDelete(id){
     this.props.isAdmin && Axios.delete(`http://localhost:5000/pizza/${id}`)
@@ -92,7 +92,7 @@ class PizzaList extends Component{
            </div>)}
            {/* <a href={`/cart/${this.props.userId}`}>Cart</a> */}
             <div className={classes.root}>
-            {this.state.pizza.map( (pizza, i) => (
+            {this.props.pizza.map( (pizza, i) => (
                 <Card
                 id={pizza._id}
                  img={pizza.pizza_img} 

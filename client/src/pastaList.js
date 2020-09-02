@@ -23,15 +23,15 @@ class PastaList extends Component{
     this.handleDelete = this.handleDelete.bind(this);
   }
 
-  componentDidMount(){
-    Axios.get('http://localhost:5000/pasta')
-    .then(res => {
-      if(res.data.length > 0){
-        this.setState({pasta: res.data})
-      }
-    });
-    console.log(this.state.pasta);
-  };
+  // componentDidMount(){
+  //   Axios.get('http://localhost:5000/pasta')
+  //   .then(res => {
+  //     if(res.data.length > 0){
+  //       this.setState({pasta: res.data})
+  //     }
+  //   });
+  //   console.log(this.state.pasta);
+  // };
 
   handleDelete(id){
     this.props.isAdmin && Axios.delete(`http://localhost:5000/pasta/${id}`)
@@ -51,7 +51,7 @@ class PastaList extends Component{
             <a className="btn btn-danger mt-3" href='/pasta/new'>add pasta</a>
            </div>)}
             <div className={classes.root}>
-            {this.state.pasta.map( (pasta, i)=> (
+            {this.props.pasta.map( (pasta, i)=> (
                 <Card
                 id={pasta._id}
                  img={pasta.pasta_img} 

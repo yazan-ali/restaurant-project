@@ -31,7 +31,7 @@ class Navbar extends Component{
     <a className="regester-link nav-link" href="/login">LOG IN</a>
   </li>
 	<li>
-	<a className="regester-link nav-link" href="/user">Signed In As: {this.props.currentUser} </a>
+	<a className="regester-link nav-link" href="/current-user">Signed In As: {this.props.currentUser} </a>
 	</li> 
   <li className="nav-item">
     <a onClick={this.handleClick} className="regester-link nav-link" href="/logout">LOG OUT</a>
@@ -71,7 +71,7 @@ class Navbar extends Component{
     <a className=" nav-link" href="/login">LOG IN</a>
   </li>
 	<li>
-	<a className=" nav-link" href="/user">Signed In As: {this.props.currentUser} </a>
+	<a className=" nav-link" href="/current-user">Signed In As: {this.props.currentUser} </a>
 	</li> 
   <li className="nav-item">
     <a onClick={this.handleClick} className=" nav-link" href="/logout">LOG OUT</a>

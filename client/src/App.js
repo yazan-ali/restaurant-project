@@ -76,7 +76,7 @@ class App extends Component{
         <Container>
           <Navbar currentUser={user.user_name} userId={user.id} />
           <Route exact path="/" render={() => <PizzaList isAdmin={user.isAdmin} userId={user.id} />}/>
-          <Route exact path="/pizza" render={() => <PizzaList isAdmin={user.isAdmin} userId={user.id}  />}/>
+          <Route exact path="/pizza" render={() => <PizzaList pizza={this.state.pizza} isAdmin={user.isAdmin} userId={user.id}  />}/>
           <Route exact path="/pizza/type/beef" render={() => <BeefPizzaList />}/>
           <Route exact path="/pizza/type/chicken" render={() => <ChickenPizzaList />}/>
           <Route exact path="/pizza/type/vegetarian" render={() => <VegetarianPizzaList />}/>
@@ -85,7 +85,7 @@ class App extends Component{
               <Route exact path={`/pizza/edit${i}/:id`} render={(routeProps) => <EditPizza isAdmin={user.isAdmin}
                id={pizza._id} pizza={pizza} />}/>
           ))}
-          <Route exact path="/pasta" render={() => <PastaList isAdmin={user.isAdmin} userId={user.id} />}/>
+          <Route exact path="/pasta" render={() => <PastaList pasta={this.state.pasta} isAdmin={user.isAdmin} userId={user.id} />}/>
           <Route exact path="/pasta/new" render={() => <CreatePasta isAdmin={user.isAdmin} />}/>
           {this.state.pasta.map((pasta, i) => (
               <Route exact path={`/pasta/edit${i}/:id`} render={(routeProps) => <EditPasta isAdmin={user.isAdmin} 
