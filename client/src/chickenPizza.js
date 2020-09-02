@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import withStyles from "@material-ui/core/styles/withStyles";
 import Card from './card';
-import '../meals/pizzaList.css';
+import './pizzaList.css';
 import axios from 'axios';
 
 
@@ -41,17 +41,17 @@ const styles = theme => ({
   });
 
 
-class BeefPizzaList extends Component{
+class ChickenPizzaList extends Component{
   constructor(props){
     super(props);
-    this.state = {beefPizza: [] }
+    this.state = {chickenPizza: [] }
   }
 
   componentDidMount(){
-    axios.get('http://localhost:5000/pizza/type/beef')
+    axios.get('http://localhost:5000/pizza/type/chicken')
     .then(res => {
       if(res.data.length >0){
-        this.setState({beefPizza: res.data})
+        this.setState({chickenPizza: res.data})
       }
     });
   }
@@ -72,7 +72,7 @@ class BeefPizzaList extends Component{
            <div>
            </div>
             <div className={classes.root}>
-            {this.state.beefPizza.map( (pizza) => (
+            {this.state.chickenPizza.map( (pizza) => (
                 <Card
                 id={pizza._id}
                  img={pizza.pizza_img} 
@@ -91,4 +91,4 @@ class BeefPizzaList extends Component{
     }
 }
 
-export default withStyles(styles)(BeefPizzaList);
+export default withStyles(styles)(ChickenPizzaList);

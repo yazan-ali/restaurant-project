@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import withStyles from "@material-ui/core/styles/withStyles";
-import Card from '../meals/card';
-import '../meals/pizzaList.css';
+import Card from './card';
+import './pizzaList.css';
 import Axios from 'axios';
 
 

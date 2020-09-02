@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import withStyles from "@material-ui/core/styles/withStyles";
-import Card from '../meals/card';
-import '../meals/pizzaList.css';
+import Card from './card';
+import './pizzaList.css';
 import Axios from 'axios';
 
 const styles = theme => ({
@@ -16,27 +16,27 @@ const styles = theme => ({
   });
 
 
-class PastaList extends Component{
+class DessertList extends Component{
   constructor(props){
     super(props);
-    this.state = {pasta: [] }
+    this.state = {dessert: [] }
     this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount(){
-    Axios.get('http://localhost:5000/pasta')
+    Axios.get('http://localhost:5000/desserts')
     .then(res => {
       if(res.data.length > 0){
-        this.setState({pasta: res.data})
+        this.setState({dessert: res.data})
       }
     });
-    console.log(this.state.pasta);
+    console.log(this.state.dessert);
   };
 
   handleDelete(id){
-    this.props.isAdmin && Axios.delete(`http://localhost:5000/pasta/${id}`)
+    this.props.isAdmin && Axios.delete(`http://localhost:5000/desserts/${id}`)
     .then(res => console.log(res.data));
-    this.setState({pasta: this.state.pasta.filter(pasta => pasta._id !== id)
+    this.setState({dessert: this.state.dessert.filter(dessert => dessert._id !== id)
     });
   };
 
@@ -45,27 +45,27 @@ class PastaList extends Component{
         return(
           <>
           <div class="d-none d-md-block mt-3">
-            <img style={{width: "1225px"}} alt="pasta-img" src="https://martjackamstorage.azureedge.net/am-resources/c79bc8ac-4c69-460f-829b-4d40568d0cca/Images/userimages/banners-may/Pasta_Banner.jpg" />	
+            <img style={{width: "1225px"}} alt="dessert-img" src="https://martjackamstorage.azureedge.net/am-resources/c79bc8ac-4c69-460f-829b-4d40568d0cca/Images/userimages/banners-may/Desserts_Banner.jpg" />	
           </div>
           {this.props.isAdmin && (<div>
-            <a className="btn btn-danger mt-3" href='/pasta/new'>add pasta</a>
+            <a className="btn btn-danger mt-3" href='/desserts/new'>add dessert</a>
            </div>)}
             <div className={classes.root}>
-            {this.state.pasta.map( (pasta, i)=> (
+            {this.state.dessert.map( (dessert, i)=> (
                 <Card
-                id={pasta._id}
-                 img={pasta.pasta_img} 
-                 name={pasta.pasta_name} 
-                 description={pasta.pasta_description} 
-                 price={pasta.pasta_price} 
+                id={dessert._id}
+                 img={dessert.dessert_img} 
+                 name={dessert.dessert_name} 
+                 description={dessert.dessert_description} 
+                 price={dessert.dessert_price} 
                  selectItem={false}
-                 showDialog={true}
+                 showDialog={false}
                  index={i}
-                 formType="pasta"
+                 formType="desserts"
                  handleDelete={this.handleDelete}
                  isAdmin={this.props.isAdmin}
                  userId={this.props.userId}
-                 key={pasta._id}
+                 key={dessert._id}
                  />
            ))}
            </div>
@@ -74,4 +74,4 @@ class PastaList extends Component{
     }
 }
 
-export default withStyles(styles)(PastaList);
+export default withStyles(styles)(DessertList);
