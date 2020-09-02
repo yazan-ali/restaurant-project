@@ -48,7 +48,7 @@ class VegetarianPizzaList extends Component{
   }
 
   componentDidMount(){
-    axios.get('https://limitless-beyond-06124.herokuapp.com/pizza-house/pizza/type/vegetarian')
+    axios.get('https://limitless-beyond-06124.herokuapp.com/pizza/type/vegetarian')
     .then(res => {
       if(res.data.length >0){
         this.setState({vegetarianPizza: res.data})
@@ -63,10 +63,10 @@ class VegetarianPizzaList extends Component{
            <div className="d-none d-sm-block mt-3">
              <img style={{width: "100%"}} className="pizza-nav-img" alt="pizza-img" src="https://martjackamstorage.azureedge.net/am-resources/c79bc8ac-4c69-460f-829b-4d40568d0cca/Images/userimages/banners-may/Pizza_Banner-en.jpg" />	
              <ul className="nav pizza-nav">
-             <li className="nav-item"><a className="nav-link" href="/pizza">ALL</a></li>	
-             <li className="nav-item"><a className="nav-link" href="/pizza/type/beef">BEEF</a></li>	
-             <li className="nav-item"><a className="nav-link" href="/pizza/type/chicken">CHICKEN</a></li>	
-             <li className="nav-item"><a className="nav-link" href="/pizza/type/vegetarian">VEGETARIAN</a></li>	
+             <li className="nav-item"><a className="nav-link" href="/pizza-house/pizza">ALL</a></li>	
+             <li className="nav-item"><a className="nav-link" href="/pizza-house/pizza/type/beef">BEEF</a></li>	
+             <li className="nav-item"><a className="nav-link" href="/pizza-house/pizza/type/chicken">CHICKEN</a></li>	
+             <li className="nav-item"><a className="nav-link" href="/pizza-house/pizza/type/vegetarian">VEGETARIAN</a></li>	
              </ul>
            </div>
            <div>
