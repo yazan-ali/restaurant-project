@@ -78,7 +78,6 @@ class PizzaList extends Component{
     const { classes } = this.props;
         return(
           <>
-            <h1>Hi</h1>
            <div className="d-none d-md-block mt-3">
              <img className="pizza-nav-img" alt="pizza-img" src="https://martjackamstorage.azureedge.net/am-resources/c79bc8ac-4c69-460f-829b-4d40568d0cca/Images/userimages/banners-may/Pizza_Banner-en.jpg" />	
              <ul className="nav pizza-nav">
@@ -93,7 +92,7 @@ class PizzaList extends Component{
            </div>)}
            {/* <a href={`/cart/${this.props.userId}`}>Cart</a> */}
             <div className={classes.root}>
-            {this.props.pizza.map( (pizza, i) => (
+            {this.state.pizza.map( (pizza, i) => (
                 <Card
                 id={pizza._id}
                  img={pizza.pizza_img} 
