@@ -75,7 +75,7 @@ class App extends Component{
         <Switch>
         <Container>
           <Navbar currentUser={user.user_name} userId={user.id} />
-          <Route exact path="/" render={() => <PizzaList isAdmin={user.isAdmin} userId={user.id} />}/>
+          <Route exact path="/" render={() => <PizzaList pizza={this.state.pizza} isAdmin={user.isAdmin} userId={user.id} />}/>
           <Route exact path="/pizza" render={() => <PizzaList pizza={this.state.pizza} isAdmin={user.isAdmin} userId={user.id}  />}/>
           <Route exact path="/pizza/type/beef" render={() => <BeefPizzaList />}/>
           <Route exact path="/pizza/type/chicken" render={() => <ChickenPizzaList />}/>
