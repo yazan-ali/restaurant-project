@@ -29,7 +29,7 @@ class App extends Component{
   }
 
   componentDidMount(){
-    Axios.get('http://localhost:5000/pizza')
+    Axios.get('http://https://limitless-beyond-06124.herokuapp.com/pizza')
     .then(res => {
       if(res.data.length >0){
         this.setState({pizza: res.data})
@@ -76,7 +76,7 @@ class App extends Component{
         <Container>
           <Navbar currentUser={user.user_name} userId={user.id} />
           <Route exact path="/" render={() => <PizzaList pizza={this.state.pizza} isAdmin={user.isAdmin} userId={user.id} />}/>
-          <Route exact path="/pizza" render={() => <PizzaList pizza={this.state.pizza} isAdmin={user.isAdmin} userId={user.id}  />}/>
+          <Route exact path="/https://limitless-beyond-06124.herokuapp.com/pizza" render={() => <PizzaList pizza={this.state.pizza} isAdmin={user.isAdmin} userId={user.id}  />}/>
           <Route exact path="/pizza/type/beef" render={() => <BeefPizzaList />}/>
           <Route exact path="/pizza/type/chicken" render={() => <ChickenPizzaList />}/>
           <Route exact path="/pizza/type/vegetarian" render={() => <VegetarianPizzaList />}/>
