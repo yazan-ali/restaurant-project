@@ -92,7 +92,7 @@ class PizzaList extends Component{
            </div>)}
            {/* <a href={`/cart/${this.props.userId}`}>Cart</a> */}
             <div className={classes.root}>
-            {this.props.pizza.map( (pizza, i) => (
+            {this.state.pizza.map( (pizza, i) => (
                 <Card
                 id={pizza._id}
                  img={pizza.pizza_img} 
