@@ -75,7 +75,7 @@ class EditPizza extends Component{
             type_5_large_size: this.state.type_5_large_size,
             type_5_small_size: this.state.type_5_small_size,
         }
-        this.props.isAdmin && Axios.put(`http://localhost:5000/pizza/${this.props.id}`, updatedPizza)
+        this.props.isAdmin && Axios.put(`https://limitless-beyond-06124.herokuapp.com/pizza/${this.props.id}`, updatedPizza)
         .then(res => console.log(res.data));
         this.setState({redirect: "/pizza"});
     }

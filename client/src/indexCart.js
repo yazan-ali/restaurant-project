@@ -34,7 +34,7 @@ class Cart extends Component{
     }
 
     componentDidMount(){
-        Axios.get(`http://localhost:5000/cart/${this.props.match.params.id}`)
+        Axios.get(`https://limitless-beyond-06124.herokuapp.com/cart/${this.props.match.params.id}`)
         .then(res => {
             if(res.data.length > 0){
                 this.setState({items: res.data})
@@ -44,7 +44,7 @@ class Cart extends Component{
     }
 
     handleDelete(id){
-        Axios.delete(`http://localhost:5000/cart/${id}`)
+        Axios.delete(`https://limitless-beyond-06124.herokuapp.com/cart/${id}`)
        .then(res => console.log(res.data));
        this.setState({
          items: this.state.items.filter(item => item._id !== id)

@@ -23,18 +23,8 @@ class DessertList extends Component{
     this.handleDelete = this.handleDelete.bind(this);
   }
 
-  componentDidMount(){
-    Axios.get('http://localhost:5000/desserts')
-    .then(res => {
-      if(res.data.length > 0){
-        this.setState({dessert: res.data})
-      }
-    });
-    console.log(this.state.dessert);
-  };
-
   handleDelete(id){
-    this.props.isAdmin && Axios.delete(`http://localhost:5000/desserts/${id}`)
+    this.props.isAdmin && Axios.delete(`https://limitless-beyond-06124.herokuapp.com/desserts/${id}`)
     .then(res => console.log(res.data));
     this.setState({dessert: this.state.dessert.filter(dessert => dessert._id !== id)
     });
@@ -44,14 +34,14 @@ class DessertList extends Component{
     const { classes } = this.props;
         return(
           <>
-          <div class="d-none d-md-block mt-3">
-            <img style={{width: "1225px"}} alt="dessert-img" src="https://martjackamstorage.azureedge.net/am-resources/c79bc8ac-4c69-460f-829b-4d40568d0cca/Images/userimages/banners-may/Desserts_Banner.jpg" />	
+          <div class="d-none d-sm-block mt-3">
+            <img style={{width: "100%"}} alt="dessert-img" src="https://martjackamstorage.azureedge.net/am-resources/c79bc8ac-4c69-460f-829b-4d40568d0cca/Images/userimages/banners-may/Desserts_Banner.jpg" />	
           </div>
           {this.props.isAdmin && (<div>
             <a className="btn btn-danger mt-3" href='/desserts/new'>add dessert</a>
            </div>)}
             <div className={classes.root}>
-            {this.state.dessert.map( (dessert, i)=> (
+            {this.props.dessert.map( (dessert, i)=> (
                 <Card
                 id={dessert._id}
                  img={dessert.dessert_img} 

@@ -67,7 +67,7 @@ class PizzaList extends Component{
   // }
 
   handleDelete(id){
-    this.props.isAdmin && Axios.delete(`http://localhost:5000/pizza/${id}`)
+    this.props.isAdmin && Axios.delete(`https://limitless-beyond-06124.herokuapp.com/pizza-house/pizza/${id}`)
     .then(res => console.log(res.data));
     this.setState({
       pizza: this.state.pizza.filter(pizza => pizza._id !== id)
@@ -78,8 +78,8 @@ class PizzaList extends Component{
     const { classes } = this.props;
         return(
           <>
-           <div className="d-none d-md-block mt-3">
-             <img style={{width: "1225px"}} alt="pizza-img" src="https://martjackamstorage.azureedge.net/am-resources/c79bc8ac-4c69-460f-829b-4d40568d0cca/Images/userimages/banners-may/Pizza_Banner-en.jpg" />	
+           <div className="d-none d-sm-block mt-3">
+             <img style={{width: "100%"}} alt="pizza-img" src="https://martjackamstorage.azureedge.net/am-resources/c79bc8ac-4c69-460f-829b-4d40568d0cca/Images/userimages/banners-may/Pizza_Banner-en.jpg" />	
              <ul className="nav pizza-nav">
              <li className="nav-item"><a className="nav-link" href="/pizza">ALL</a></li>	
              <li className="nav-item"><a className="nav-link" href="/pizza/type/beef">BEEF</a></li>	

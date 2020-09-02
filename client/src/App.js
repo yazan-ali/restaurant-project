@@ -49,7 +49,6 @@ class App extends Component{
       if(res.data.length >0){
         this.setState({pizza: res.data})
       }
-      console.log(this.state.pizza);
     });
     // get all pasta 
     Axios.get('https://limitless-beyond-06124.herokuapp.com/pasta')
@@ -91,7 +90,7 @@ class App extends Component{
               <Route exact path={`/pasta/edit${i}/:id`} render={(routeProps) => <EditPasta isAdmin={user.isAdmin} 
               id={pasta._id} pasta={pasta} />}/>
           ))}
-          <Route exact path="/pizza-house/desserts" render={() => <DessertList isAdmin={user.isAdmin} userId={user.id} />}/>
+          <Route exact path="/pizza-house/desserts" render={() => <DessertList dessert={this.state.dessert} isAdmin={user.isAdmin} userId={user.id} />}/>
           <Route exact path="/desserts/new" render={() => <CreateDessert isAdmin={user.isAdmin} />}/>
           {this.state.dessert.map((dessert, i) => (
               <Route exact path={`/desserts/edit${i}/:id`} render={(routeProps) => <EditDessert isAdmin={user.isAdmin}

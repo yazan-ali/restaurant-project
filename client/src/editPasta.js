@@ -27,7 +27,7 @@ class CreatePasta extends Component{
             description: this.state.pasta_description,
             price: this.state.pasta_price
         }
-       this.props.isAdmin &&  Axios.put(`http://localhost:5000/pasta/${this.props.id}`, updatedPasta)
+       this.props.isAdmin &&  Axios.put(`https://limitless-beyond-06124.herokuapp.com/pasta/${this.props.id}`, updatedPasta)
         .then(res => console.log(res.data))
     }
     render(){

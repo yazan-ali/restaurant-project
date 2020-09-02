@@ -27,7 +27,7 @@ class EditDessert extends Component{
             description: this.state.dessert_description,
             price: this.state.dessert_price
         }
-        this.props.isAdmin && Axios.put(`http://localhost:5000/desserts/${this.props.id}`, updatedDessert)
+        this.props.isAdmin && Axios.put(`https://limitless-beyond-06124.herokuapp.com/desserts/${this.props.id}`, updatedDessert)
         .then(res => console.log(res.data))
     }
 

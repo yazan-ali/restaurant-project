@@ -22,7 +22,7 @@ class CreateStarters extends Component{
             starter_name: this.state.starter_name,
             starter_price: this.state.starter_price,
         }
-        axios.post('http://localhost:5000/starters', starter)
+        axios.post('https://limitless-beyond-06124.herokuapp.com/starters', starter)
         .then(res => console.log(res.data))
         this.setState({
             starter_name: "",

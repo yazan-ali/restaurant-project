@@ -75,7 +75,7 @@ class CreatePizza extends Component{
             type_5_small_size: this.state.type_5_small_size,
         }
         console.log(pizza);
-        this.props.isAdmin &&  Axios.post('http://localhost:5000/pizza', pizza)
+        this.props.isAdmin &&  Axios.post('https://limitless-beyond-06124.herokuapp.com/pizza', pizza)
         .then(res => console.log(res.data))
         this.setState({
             pizza_type: "",

@@ -27,7 +27,7 @@ class CreateDessert extends Component{
             price: this.state.dessert_price
         }
         console.log(dessert);
-        this.props.isAdmin && Axios.post('http://localhost:5000/desserts', dessert)
+        this.props.isAdmin && Axios.post('https://limitless-beyond-06124.herokuapp.com/desserts', dessert)
         .then(res => console.log(res.data))
         this.setState({
             dessert_img: "",

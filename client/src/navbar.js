@@ -9,7 +9,7 @@ class Navbar extends Component{
   }
 
   handleClick(){
-    Axios.get('http://localhost:5000/logout')
+    Axios.get('https://limitless-beyond-06124.herokuapp.com/logout')
         .then(res => console.log(res.data))
     }
 

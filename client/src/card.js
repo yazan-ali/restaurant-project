@@ -96,7 +96,7 @@ class Card extends Component{
   }
 
   componentDidMount(){
-    Axios.get('http://localhost:5000/starters')
+    Axios.get('https://limitless-beyond-06124.herokuapp.com/starters')
     .then(res => {
       if(res.data.length > 0){
         this.setState({AddOns: res.data})
@@ -183,7 +183,7 @@ class Card extends Component{
     //      mealType: this.props.formType,
     //     //  userId : this.props.userId
     //      }
-         Axios.post('http://localhost:5000/cart', { name: this.props.name,
+         Axios.post('https://limitless-beyond-06124.herokuapp.com/cart', { name: this.props.name,
          img: this.props.img,
          description:this.props.description,
          size: this.state.size,

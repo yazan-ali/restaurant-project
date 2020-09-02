@@ -28,7 +28,7 @@ class CreatePasta extends Component{
             price: this.state.pasta_price
         }
         console.log(pasta);
-        this.props.isAdmin && Axios.post('http://localhost:5000/pasta', pasta)
+        this.props.isAdmin && Axios.post('https://limitless-beyond-06124.herokuapp.com/pasta', pasta)
         .then(res => console.log(res.data))
         this.setState({
             pasta_img: "",

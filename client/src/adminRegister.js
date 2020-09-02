@@ -73,7 +73,7 @@ handleSubmit(e){
         isAdmin: true
       },
       withCredentials: true,
-      url: "http://localhost:5000/register",
+      url: "https://limitless-beyond-06124.herokuapp.com/register",
     }).then((res) => console.log(res));
   };
     render(){
