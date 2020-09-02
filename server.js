@@ -6,9 +6,6 @@ const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 const  passport = require("passport");
 const path = require('path')
-const session = require('express-session');
-const MongoStore = require('connect-mongo')(session);
- 
 
 const pizzaRoutes = require("./routes/pizza");
 const pastaRoutes = require("./routes/pasta");
@@ -32,12 +29,6 @@ mongoose.connect("mongodb+srv://yazan1ali:yazan154ali@cluster0-x9sw4.mongodb.net
   useCreateIndex:true
 });
 const connection = mongoose.connection;
-
-app.use(session({
-  secret: 'foo',
-  store: new MongoStore({ mongooseConnection: connection })
-}));
-
 connection.once('open', () => {
     console.log("MongoDB database connection established successfully");
 });
