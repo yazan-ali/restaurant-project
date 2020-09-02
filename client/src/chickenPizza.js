@@ -47,15 +47,6 @@ class ChickenPizzaList extends Component{
     this.state = {chickenPizza: [] }
   }
 
-  componentDidMount(){
-    axios.get('https://limitless-beyond-06124.herokuapp.com/pizza/type/chicken')
-    .then(res => {
-      if(res.data.length >0){
-        this.setState({chickenPizza: res.data})
-      }
-    });
-  }
-
     render(){
     const { classes } = this.props;
         return(
@@ -72,7 +63,7 @@ class ChickenPizzaList extends Component{
            <div>
            </div>
             <div className={classes.root}>
-            {this.state.chickenPizza.map( (pizza) => (
+            {this.props.chickenPizza.map( (pizza) => (
                 <Card
                 id={pizza._id}
                  img={pizza.pizza_img} 
