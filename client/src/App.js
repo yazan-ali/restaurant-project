@@ -29,7 +29,7 @@ class App extends Component{
   }
 
   componentDidMount(){
-    Axios.get('http://https://limitless-beyond-06124.herokuapp.com/pizza')
+    Axios.get('http://localhost:5000/pizza')
     .then(res => {
       if(res.data.length >0){
         this.setState({pizza: res.data})
@@ -41,15 +41,15 @@ class App extends Component{
       url: "http://localhost:5000/user",
     }).then((res) => {
       this.setState({user: res.data});
-      console.log(res.data);
     });    
 
     // get all pizza
-    Axios.get('http://localhost:5000/pizza')
+    Axios.get('https://limitless-beyond-06124.herokuapp.com/pizza')
     .then(res => {
       if(res.data.length >0){
         this.setState({pizza: res.data})
       }
+      console.log(this.state.pizza);
     });
     // get all pasta 
     Axios.get('http://localhost:5000/pasta')
@@ -75,8 +75,8 @@ class App extends Component{
         <Switch>
         <Container>
           <Navbar currentUser={user.user_name} userId={user.id} />
-          <Route exact path="/" render={() => <PizzaList pizza={this.state.pizza} isAdmin={user.isAdmin} userId={user.id} />}/>
-          <Route exact path="/https://limitless-beyond-06124.herokuapp.com/pizza" render={() => <PizzaList pizza={this.state.pizza} isAdmin={user.isAdmin} userId={user.id}  />}/>
+          <Route exact path="/" render={() => <PizzaList pizza={this.state.pizza}  isAdmin={user.isAdmin} userId={user.id} />}/>
+          <Route exact path="/pizzaAll" render={() => <PizzaList pizza={this.state.pizza} isAdmin={user.isAdmin} userId={user.id}  />}/>
           <Route exact path="/pizza/type/beef" render={() => <BeefPizzaList />}/>
           <Route exact path="/pizza/type/chicken" render={() => <ChickenPizzaList />}/>
           <Route exact path="/pizza/type/vegetarian" render={() => <VegetarianPizzaList />}/>
