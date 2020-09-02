@@ -92,7 +92,7 @@ class PizzaList extends Component{
            </div>)}
            {/* <a href={`/cart/${this.props.userId}`}>Cart</a> */}
             <div className={classes.root}>
-            {this.state.pizza.map( (pizza, i) => (
+            {/* {this.state.pizza.map( (pizza, i) => (
                 <Card
                 id={pizza._id}
                  img={pizza.pizza_img} 
@@ -110,7 +110,24 @@ class PizzaList extends Component{
                  userId={this.props.userId}
                  key={pizza._id}
                  />
-           ))}
+           ))} */}
+                  <Card
+                id="dgs"
+                 img="https://martjackamstorage.azureedge.net/am-resources/c79bc8ac-4c69-460f-829b-4d40568d0cca/Images/userimages/banners-may/Pizza_Banner-en.jpg" 
+                 name="dsgds" 
+                 description="gsgasgasgsarhdhdthrtshetdgsfgzdhfrjrshswxfbdghfjrt"
+                 price={pizza.pizza_price} 
+                 sizes={[pizza.pizza_size.size_1, pizza.pizza_size.size_2, pizza.pizza_size.size_3]} 
+                 types={[pizza.dough_type.type_1, pizza.dough_type.type_2, pizza.dough_type.type_3, pizza.dough_type.type_4, pizza.dough_type.type_5, pizza.dough_type.type_6]}
+                 showDialog={true}
+                 selectItem={true}
+                 index={i}
+                 formType="pizza"
+                 handleDelete={this.handleDelete}
+                 isAdmin={this.props.isAdmin}
+                 userId={this.props.userId}
+                 key={pizza._id}
+                 />
            </div>
            </>
         );
