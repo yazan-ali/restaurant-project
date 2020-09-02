@@ -63,7 +63,7 @@ class BeefPizzaList extends Component{
            <div>
            </div>
             <div className={classes.root}>
-            {this.props.beefPizza.map( (pizza) => (
+            {this.props.pizza.map( (pizza) => (
                 <Card
                 id={pizza._id}
                  img={pizza.pizza_img} 
