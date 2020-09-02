@@ -45,7 +45,7 @@ class PastaList extends Component{
         return(
           <>
           <div class="d-none d-md-block mt-3">
-            <img class="pizza-nav-img" alt="pasta-img" src="https://martjackamstorage.azureedge.net/am-resources/c79bc8ac-4c69-460f-829b-4d40568d0cca/Images/userimages/banners-may/Pasta_Banner.jpg" />	
+            <img style={{width: "1225px"}} alt="pasta-img" src="https://martjackamstorage.azureedge.net/am-resources/c79bc8ac-4c69-460f-829b-4d40568d0cca/Images/userimages/banners-may/Pasta_Banner.jpg" />	
           </div>
           {this.props.isAdmin && (<div>
             <a className="btn btn-danger mt-3" href='/pasta/new'>add pasta</a>

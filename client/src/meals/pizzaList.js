@@ -79,7 +79,7 @@ class PizzaList extends Component{
         return(
           <>
            <div className="d-none d-md-block mt-3">
-             <img className="pizza-nav-img" alt="pizza-img" src="https://martjackamstorage.azureedge.net/am-resources/c79bc8ac-4c69-460f-829b-4d40568d0cca/Images/userimages/banners-may/Pizza_Banner-en.jpg" />	
+             <img style={{width: "1225px"}} alt="pizza-img" src="https://martjackamstorage.azureedge.net/am-resources/c79bc8ac-4c69-460f-829b-4d40568d0cca/Images/userimages/banners-may/Pizza_Banner-en.jpg" />	
              <ul className="nav pizza-nav">
              <li className="nav-item"><a className="nav-link" href="/pizza">ALL</a></li>	
              <li className="nav-item"><a className="nav-link" href="/pizza/type/beef">BEEF</a></li>	
