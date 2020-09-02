@@ -100,7 +100,7 @@ class App extends Component{
           <Route exact path="/register" render={() => <Register />}/>
           <Route exact path="/register/admin" render={() => <AdminRegister />}/>
           <Route exact path="/login" render={(routeProps) => <Login {...routeProps} />}/>
-          <Route exact path='/cart/:id' render={ (routeProps) => <Cart {...routeProps} />}/>
+          <Route exact path='pizza-house/cart/:id' render={ (routeProps) => <Cart {...routeProps} />}/>
         </Container>
         </Switch>
       </div>
