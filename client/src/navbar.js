@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './navbar.css';
 import Axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class Navbar extends Component{
   constructor(props){
@@ -48,7 +49,7 @@ class Navbar extends Component{
   <div className="collapse navbar-collapse" id="navbarSupportedContent">
     <ul className="navbar-nav mr-auto">
       <li className="nav-item ">
-        <a  href="/pizza" className="nav-link main-nav-link">Pizza<span className="sr-only">(current)</span></a>
+        <Link exact to="/pizza" className="nav-link main-nav-link">Pizza<span className="sr-only">(current)</span></Link>
       </li>
       <li className="nav-item">
         <a className="nav-link main-nav-link" href="/pasta">Pasta</a>
