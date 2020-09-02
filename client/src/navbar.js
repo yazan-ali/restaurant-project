@@ -48,13 +48,13 @@ class Navbar extends Component{
   <div className="collapse navbar-collapse" id="navbarSupportedContent">
     <ul className="navbar-nav mr-auto">
       <li className="nav-item ">
-        <a  href="/pizzaAll" className="nav-link main-nav-link">Pizza<span className="sr-only">(current)</span></a>
+        <a  href="/pizza-house/pizza" className="nav-link main-nav-link">Pizza<span className="sr-only">(current)</span></a>
       </li>
       <li className="nav-item">
-        <a className="nav-link main-nav-link" href="/pasta">Pasta</a>
+        <a className="nav-link main-nav-link" href="/pizza-house/pasta">Pasta</a>
       </li>
       <li className="nav-item">
-        <a className="nav-link main-nav-link" href="/desserts">Desserts</a>
+        <a className="nav-link main-nav-link" href="/pizza-house/desserts">Desserts</a>
       </li>
       <li className="nav-item">
         <a className="nav-link main-nav-link " href="/deals">Deals</a>

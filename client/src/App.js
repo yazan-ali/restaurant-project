@@ -38,7 +38,7 @@ class App extends Component{
     Axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:5000/user",
+      url: "https://limitless-beyond-06124.herokuapp.com/user",
     }).then((res) => {
       this.setState({user: res.data});
     });    
@@ -52,7 +52,7 @@ class App extends Component{
       console.log(this.state.pizza);
     });
     // get all pasta 
-    Axios.get('http://localhost:5000/pasta')
+    Axios.get('https://limitless-beyond-06124.herokuapp.com/pasta')
     .then(res => {
       if(res.data.length >0){
         this.setState({pasta: res.data})
@@ -60,7 +60,7 @@ class App extends Component{
     });
    
     // get all dessert
-    Axios.get('http://localhost:5000/desserts')
+    Axios.get('https://limitless-beyond-06124.herokuapp.com/desserts')
     .then(res => {
       if(res.data.length >0){
         this.setState({dessert: res.data})
@@ -76,22 +76,22 @@ class App extends Component{
         <Container>
           <Navbar currentUser={user.user_name} userId={user.id} />
           <Route exact path="/" render={() => <PizzaList pizza={this.state.pizza}  isAdmin={user.isAdmin} userId={user.id} />}/>
-          <Route exact path="/pizzaAll" render={() => <PizzaList pizza={this.state.pizza} isAdmin={user.isAdmin} userId={user.id}  />}/>
-          <Route exact path="/pizza/type/beef" render={() => <BeefPizzaList />}/>
-          <Route exact path="/pizza/type/chicken" render={() => <ChickenPizzaList />}/>
-          <Route exact path="/pizza/type/vegetarian" render={() => <VegetarianPizzaList />}/>
+          <Route exact path="/pizza-house/pizza" render={() => <PizzaList pizza={this.state.pizza} isAdmin={user.isAdmin} userId={user.id}  />}/>
+          <Route exact path="/pizza-house/pizza/type/beef" render={() => <BeefPizzaList />}/>
+          <Route exact path="/pizza-house/pizza/type/chicken" render={() => <ChickenPizzaList />}/>
+          <Route exact path="/pizza-house/pizza/type/vegetarian" render={() => <VegetarianPizzaList />}/>
           <Route exact path="/pizza/new" render={() => <CreatePizza isAdmin={user.isAdmin} />}/>
           {this.state.pizza.map((pizza, i) => (
               <Route exact path={`/pizza/edit${i}/:id`} render={(routeProps) => <EditPizza isAdmin={user.isAdmin}
                id={pizza._id} pizza={pizza} />}/>
           ))}
-          <Route exact path="/pasta" render={() => <PastaList pasta={this.state.pasta} isAdmin={user.isAdmin} userId={user.id} />}/>
+          <Route exact path="/pizza-house/pasta" render={() => <PastaList pasta={this.state.pasta} isAdmin={user.isAdmin} userId={user.id} />}/>
           <Route exact path="/pasta/new" render={() => <CreatePasta isAdmin={user.isAdmin} />}/>
           {this.state.pasta.map((pasta, i) => (
               <Route exact path={`/pasta/edit${i}/:id`} render={(routeProps) => <EditPasta isAdmin={user.isAdmin} 
               id={pasta._id} pasta={pasta} />}/>
           ))}
-          <Route exact path="/desserts" render={() => <DessertList isAdmin={user.isAdmin} userId={user.id} />}/>
+          <Route exact path="/pizza-house/desserts" render={() => <DessertList isAdmin={user.isAdmin} userId={user.id} />}/>
           <Route exact path="/desserts/new" render={() => <CreateDessert isAdmin={user.isAdmin} />}/>
           {this.state.dessert.map((dessert, i) => (
               <Route exact path={`/desserts/edit${i}/:id`} render={(routeProps) => <EditDessert isAdmin={user.isAdmin}
