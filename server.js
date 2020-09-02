@@ -6,6 +6,8 @@ const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 const  passport = require("passport");
 const path = require('path')
+var session = require('express-session')
+var MemoryStore = require('memorystore')(session)
 
 const pizzaRoutes = require("./routes/pizza");
 const pastaRoutes = require("./routes/pasta");
@@ -32,6 +34,14 @@ const connection = mongoose.connection;
 connection.once('open', () => {
     console.log("MongoDB database connection established successfully");
 });
+
+app.use(session({
+  cookie: { maxAge: 86400000 },
+  store: new MemoryStore({
+    checkPeriod: 86400000 // prune expired entries every 24h
+  }),
+  secret: 'keyboard cat'
+}))
 
 
 //passport configuer
