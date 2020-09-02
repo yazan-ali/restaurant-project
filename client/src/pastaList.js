@@ -34,9 +34,9 @@ class PastaList extends Component{
   // };
 
   handleDelete(id){
-    this.props.isAdmin && Axios.delete(`https://limitless-beyond-06124.herokuapp.com/pizza-house/pasta/${id}`)
+    this.props.isAdmin && Axios.delete(`https://limitless-beyond-06124.herokuapp.com/pasta/${id}`)
     .then(res => console.log(res.data));
-    this.setState({pasta: this.state.pasta.filter(pasta => pasta._id !== id)
+    this.setState({pasta: this.props.pasta.filter(pasta => pasta._id !== id)
     });
   };
 

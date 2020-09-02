@@ -67,10 +67,10 @@ class PizzaList extends Component{
   // }
 
   handleDelete(id){
-    this.props.isAdmin && Axios.delete(`https://limitless-beyond-06124.herokuapp.com/pizza-house/pizza/${id}`)
+    this.props.isAdmin && Axios.delete(`https://limitless-beyond-06124.herokuapp.com/pizza/${id}`)
     .then(res => console.log(res.data));
     this.setState({
-      pizza: this.state.pizza.filter(pizza => pizza._id !== id)
+      pizza: this.props.pizza.filter(pizza => pizza._id !== id)
     });
   };
 

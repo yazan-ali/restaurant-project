@@ -26,7 +26,7 @@ class DessertList extends Component{
   handleDelete(id){
     this.props.isAdmin && Axios.delete(`https://limitless-beyond-06124.herokuapp.com/desserts/${id}`)
     .then(res => console.log(res.data));
-    this.setState({dessert: this.state.dessert.filter(dessert => dessert._id !== id)
+    this.setState({dessert: this.props.dessert.filter(dessert => dessert._id !== id)
     });
   };
 

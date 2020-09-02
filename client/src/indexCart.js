@@ -31,9 +31,6 @@ class Cart extends Component{
         super(props);
         this.state={items: []}
         this.handleDelete = this.handleDelete.bind(this);
-    }
-
-    componentDidMount(){
         Axios.get(`https://limitless-beyond-06124.herokuapp.com/cart/${this.props.match.params.id}`)
         .then(res => {
             if(res.data.length > 0){
