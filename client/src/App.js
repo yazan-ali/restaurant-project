@@ -79,7 +79,7 @@ class App extends Component{
           <Route exact path="/pizza-house/pizza/type/beef" render={() => <BeefPizzaList />}/>
           <Route exact path="/pizza-house/pizza/type/chicken" render={() => <ChickenPizzaList />}/>
           <Route exact path="/pizza-house/pizza/type/vegetarian" render={() => <VegetarianPizzaList />}/>
-          <Route exact path="/pizza/new" render={() => <CreatePizza isAdmin={user.isAdmin} />}/>
+          <Route exact path="/pizza/new/add" render={() => <CreatePizza isAdmin={user.isAdmin} />}/>
           {this.state.pizza.map((pizza, i) => (
               <Route exact path={`/pizza/edit${i}/:id`} render={(routeProps) => <EditPizza isAdmin={user.isAdmin}
                id={pizza._id} pizza={pizza} />}/>
