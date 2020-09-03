@@ -37,10 +37,18 @@ const styles = theme => ({
         // width: "180px"
     },
     name:{
-        color: "#c8102e"
+        color: "#c8102e",
+        fontSize: "15px",
+        [theme.breakpoints.up("md")]: {
+          fontSize: "25px"
+      }
     },
     description: {
-        lineHeight: "25px"
+        lineHeight: "25px",
+        [theme.breakpoints.down("sm")]: {
+          fontSize: "10px",
+          lineHeight: "20px"
+       }
     },
     qty: {
         padding: "0 5px",
