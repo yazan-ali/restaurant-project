@@ -48,24 +48,6 @@ class PizzaList extends Component{
     this.handleDelete = this.handleDelete.bind(this);
   }
 
-  // componentDidMount(){
-  //   Axios.get('http://localhost:5000/pizza')
-  //   .then(res => {
-  //     if(res.data.length >0){
-  //       this.setState({pizza: res.data})
-  //     }
-  //   });
-  //   Axios({
-  //     method: "GET",
-  //     withCredentials: true,
-  //     url: "http://localhost:5000/user",
-  //   }).then((res) => {
-  //     this.setState({user: res.data});
-  //     console.log(res.data);
-  //   });
-  //   console.log(this.state.pizza)
-  // }
-
   handleDelete(id){
     this.props.isAdmin && Axios.delete(`https://limitless-beyond-06124.herokuapp.com/pizza/${id}`)
     .then(res => console.log(res.data));

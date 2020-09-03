@@ -4,7 +4,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 const styles = theme => ({
   root: {
     margin: "auto",
-    width: "95vw",
+    width: "98vw",
    [theme.breakpoints.up("md")]: {
      width: "80vw"
     }

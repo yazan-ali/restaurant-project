@@ -20,8 +20,6 @@ import AdminRegister from './adminRegister';
 import Login from './login'; 
 import Cart from './indexCart';
 import Axios from 'axios';
-import vegetarianPizza from './vegetarianPizza';
-import beefPizza from './beefPizza';
 
 
 class App extends Component{
@@ -31,12 +29,6 @@ class App extends Component{
   }
 
   componentDidMount(){
-    Axios.get('http://localhost:5000/pizza')
-    .then(res => {
-      if(res.data.length >0){
-        this.setState({pizza: res.data})
-      }
-    });
     Axios({
       method: "GET",
       withCredentials: true,
@@ -53,7 +45,7 @@ class App extends Component{
       }
     });
     // all beef pizza
-    Axios.get('hhttps://limitless-beyond-06124.herokuapp.com/pizza/type/beef')
+    Axios.get('https://limitless-beyond-06124.herokuapp.com/pizza/type/beef')
     .then(res => {
       if(res.data.length >0){
         this.setState({beefPizza: res.data})
@@ -123,7 +115,7 @@ class App extends Component{
           <Route exact path="/register" render={() => <Register />}/>
           <Route exact path="/register/admin" render={() => <AdminRegister />}/>
           <Route exact path="/login" render={(routeProps) => <Login {...routeProps} />}/>
-          <Route exact path='pizza-house/cart/:id' render={ (routeProps) => <Cart {...routeProps} />}/>
+          <Route exact path='/cart/:id' render={ (routeProps) => <Cart {...routeProps} />}/>
         </Container>
         </Switch>
       </div>

@@ -22,7 +22,7 @@ import Axios from 'axios';
 
 const styles = theme => ({
   root: {
-    width: "95vw",
+    width: "98vw",
     display: "flex",
     justifyContent: "space-between",
     border: "1.5px solid #CCCCCC ",
@@ -35,10 +35,14 @@ const styles = theme => ({
   }
 },
   content: {
-    marginLeft: "2rem",
+    marginLeft: "1rem",
 },
 title: {
-  color: "#c8102e"
+  color: "#c8102e",
+  fontSize: "15px",
+  [theme.breakpoints.up("md")]: {
+   fontSize: "25px"
+}
 },
 price: {
   fontSize: "2rem",
@@ -50,7 +54,11 @@ formControl: {
   minWidth: 120,
 },
 description: {
-  lineHeight: "25px"
+  lineHeight: "25px",
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "10px",
+    lineHeight: "20px"
+ }
 },
 img: {
   width: "180px"
@@ -67,9 +75,6 @@ addToCartBtn: {
     backgroundColor: "#c8102e",
     color: "white",
   }
-},
-loginBtn: {
-  backgroundColor: "red"
 }
 });
 
@@ -171,18 +176,6 @@ class Card extends Component{
   handleAddToCart(){
     const addOnaddToCart=this.state.AddOns.filter(addOn => addOn.checked);
     const user_id = this.props.userId
-    //  const cartItems = {
-    //      name: this.props.name,
-    //      img: this.props.img,
-    //      description:this.props.description,
-    //      size: this.state.size,
-    //      type: this.state.type,
-    //      drink: this.state.drink,
-    //      addOne: addOnaddToCart.map(item => item.starter_name),
-    //      total: this.state.total + this.totalPrice(),
-    //      mealType: this.props.formType,
-    //     //  userId : this.props.userId
-    //      }
          Axios.post('https://limitless-beyond-06124.herokuapp.com/cart', { name: this.props.name,
          img: this.props.img,
          description:this.props.description,
@@ -219,7 +212,7 @@ class Card extends Component{
         </div>
         <div className={classes.content}>
           <div style={{display:"flex"}}>
-          <h3 className={classes.title}> {name} </h3>
+         <h3 className={classes.title}> {name} </h3>
          {this.props.isAdmin && ( <div className={classes.edit_delete_btn}>
         <a className="btn btn-secondary " href={`/${formType}/edit${index}/${id}`}>Edit</a>
         <button className="btn btn-danger ml-2" onClick={this.handleDelete}>Delete</button>

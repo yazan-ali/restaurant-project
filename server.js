@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: "http://localhost:3000", 
+    origin: "https://limitless-beyond-06124.herokuapp.com", 
     credentials: true,
   })
 );

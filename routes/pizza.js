@@ -11,7 +11,6 @@ router.get('/pizza', (req,res) => {
          console.log(err);
      } else {
          res.send(foundedPizza);
-        //  console.log(foundedPizza);
      }
  });
 });

@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import withStyles from "@material-ui/core/styles/withStyles";
 import Card from './card';
 import './pizzaList.css';
-import axios from 'axios';
-
 
 const styles = theme => ({
     root: {
@@ -14,30 +12,6 @@ const styles = theme => ({
       flexWrap: "wrap"
         }
     },
-    // pizzaNav: {
-    //   background: "black",
-    //   opacity: "75%", 
-    //   color: "white", 
-    //   position: "relative",
-    //   bottom: "30px",
-    //   width: "1110px"
-    //   },
-    //   pizzaNav: {
-    //     "& a": {
-    //       color: "white",
-    //       padding: "2px 30px",
-    //       fontSize: "18px",  
-    //     },
-    //   },
-    //   pizzaNavImg: {
-    //   width: "1225px"
-    //   },
-    //   pizzaNav: {
-    //     "& a:hover": {
-    //       color: "#c8102e",
-    //       textDecoration: "none"
-    //     }		 		
-    //   }
   });
 
 

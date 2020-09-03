@@ -1,30 +1,6 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
-// import withStyles from "@material-ui/core/styles/withStyles";
 import CartCard from './cartCard';
-
-// const styles = theme => ({
-//     root: {
-//         display: "flex",
-//         flexDirection: "column",
-//         width: "50%",
-//         margin: "2rem auto",
-//         border: "2px #CCCCCC solid",
-//         padding: theme.spacing(2),
-//         borderRadius: "1rem"
-//     },
-//     header: {
-//         display: "flex"
-//     },
-//     name_description: {
-//         marginLeft: theme.spacing(3),
-//         marginTop: theme.spacing(3)
-//     },
-//     formControl: {
-//         margin: theme.spacing(1),
-//         minWidth: 120,
-//     },
-// })
 
 class Cart extends Component{
     constructor(props){
