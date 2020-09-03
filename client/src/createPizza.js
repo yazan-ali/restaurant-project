@@ -57,7 +57,6 @@ class CreatePizza extends Component{
             type_3: this.state.type_3,
             type_4: this.state.type_4,
             type_5: this.state.type_5,
-            type_6: this.state.type_6,
             type_1_medium_size: this.state.type_1_medium_size,
             type_1_large_size: this.state.type_1_large_size,
             type_1_small_size: this.state.type_1_small_size,
@@ -90,7 +89,6 @@ class CreatePizza extends Component{
             type_3: "",
             type_4: "",
             type_5: "",
-            type_6: "",
             type_1_medium_size: "",
             type_1_large_size: "",
             type_1_small_size: "",
@@ -270,7 +268,7 @@ class CreatePizza extends Component{
                 label="type 1 small size price"
                 color="secondary"
                 name="type_1_small_size"
-                value={this.state.type_1_smalll_size} 
+                value={this.state.type_1_small_size} 
                 onChange={this.handleChange}
                 margin="normal" 
                 variant="filled"

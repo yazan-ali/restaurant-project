@@ -115,7 +115,7 @@ handleSubmit(e){
                    >
                    </Input>
                </FormControl>
-               <button className="btn btn-secondary mt-3" type="submit"> Login </button>
+               <button className="btn btn-secondary mt-3" type="submit"> Sign Up </button>
             </form>
           </Paper>
         </main>

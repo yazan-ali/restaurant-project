@@ -43,7 +43,7 @@ const styles = theme => ({
         lineHeight: "25px"
     },
     qty: {
-        padding: "0 10px",
+        padding: "0 5px",
     },
     icon: {
         pointer: "cursor",
