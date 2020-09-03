@@ -24,15 +24,19 @@ class Navbar extends Component{
   <li className="nav-item">
     <a className="regester-link nav-link active" href="/find">FIND A PIZZA HUT</a>
   </li>
+  {this.props.userId &&
   <li className="nav-item">
     <a className="regester-link nav-link" href="/register">CREATE AN ACCOUNT </a>
   </li>
+  }
   <li className="nav-item">
     <a className="regester-link nav-link" href="/login">LOG IN</a>
   </li>
+  {this.props.userId &&
 	<li>
 	<a className="regester-link nav-link" href="/current-user">Signed In As: {this.props.currentUser} </a>
-	</li> 
+  </li> 
+  }
   <li className="nav-item">
     <a onClick={this.handleClick} className="regester-link nav-link" href="/logout">LOG OUT</a>
   </li>
