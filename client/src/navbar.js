@@ -24,23 +24,26 @@ class Navbar extends Component{
   <li className="nav-item">
     <a className="regester-link nav-link active" href="/find">FIND A PIZZA HUT</a>
   </li>
-  {this.props.userId &&
+  {!this.props.userId &&
   <li className="nav-item">
     <a className="regester-link nav-link" href="/register">CREATE AN ACCOUNT </a>
   </li>
   }
+  { !this.props.userId &&
   <li className="nav-item">
     <a className="regester-link nav-link" href="/login">LOG IN</a>
   </li>
+  }
   {this.props.userId &&
 	<li>
 	<a className="regester-link nav-link" href="/current-user">Signed In As: {this.props.currentUser} </a>
   </li> 
   }
+  {this.props.userId &&
   <li className="nav-item">
     <a onClick={this.handleClick} className="regester-link nav-link" href="/logout">LOG OUT</a>
   </li>
-
+  }
 </ul>
     </div>
         <nav id="main" className="navbar navbar-expand-lg navbar-dark main-nav mt-2 ">
@@ -68,12 +71,16 @@ class Navbar extends Component{
       </li>
     </ul>
     <ul className="nav navbar-nav navbar-right d-md-none">
+    {!this.props.userId &&
     <li className="nav-item">
     <a className=" nav-link" href="/register">CREATE AN ACCOUNT </a>
   </li>
+  }
+  {!this.props.userId &&
   <li className="nav-item">
     <a className=" nav-link" href="/login">LOG IN</a>
   </li>
+  }
   {this.props.userId &&
 	<li>
 	<a className=" nav-link" href="/current-user">Signed In As: {this.props.currentUser} </a>
