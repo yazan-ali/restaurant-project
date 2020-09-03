@@ -17,7 +17,7 @@ const styles = theme => ({
     root: {
         display: "flex",
         flexDirection: "column",
-        width: "980%",
+        width: "98vw",
         margin: "2rem auto",
         border: "2px #CCCCCC solid",
         padding: theme.spacing(2),
@@ -38,7 +38,7 @@ const styles = theme => ({
     },
     name:{
         color: "#c8102e",
-        fontSize: "15px",
+        fontSize: "18px",
         [theme.breakpoints.up("md")]: {
           fontSize: "25px"
       }

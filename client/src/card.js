@@ -39,7 +39,7 @@ const styles = theme => ({
 },
 title: {
   color: "#c8102e",
-  fontSize: "15px",
+  fontSize: "18px",
   [theme.breakpoints.up("md")]: {
    fontSize: "25px"
 }
@@ -47,7 +47,7 @@ title: {
 price: {
   fontSize: "2rem",
   fontWeight: 500,
-  marginLeft: "2rem",
+  marginLeft: "1.9rem",
 },
 formControl: {
   margin: theme.spacing(1),
