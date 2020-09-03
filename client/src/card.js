@@ -39,6 +39,9 @@ const styles = theme => ({
 },
 title: {
   color: "#c8102e",
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "15px",
+ }
 },
 price: {
   fontSize: "2rem",
@@ -62,9 +65,6 @@ description: {
 },
 img: {
   width: "180px",
-  [theme.breakpoints.down("sm")]: {
-  width: "120px"
- }
 },
 edit_delete_btn: {
   display: "flex",
@@ -215,8 +215,7 @@ class Card extends Component{
         </div>
         <div className={classes.content}>
           <div style={{display:"flex"}}>
-          <h3 className={`d-none d-md-block ${classes.title}`}> {name} </h3>
-          <h4 className={`d-md-none d-block ${classes.title}`}> {name} </h4>         
+          <h3 className={classes.title}> {name} </h3>
           {this.props.isAdmin && ( <div className={classes.edit_delete_btn}>
         <a className="btn btn-secondary " href={`/${formType}/edit${index}/${id}`}>Edit</a>
         <button className="btn btn-danger ml-2" onClick={this.handleDelete}>Delete</button>
