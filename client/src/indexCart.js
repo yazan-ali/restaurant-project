@@ -11,7 +11,6 @@ class Cart extends Component{
         .then(res => {
             if(res.data.length > 0){
                 this.setState({items: res.data})
-                console.log(res.data)
             }
         });
     }
@@ -25,7 +24,6 @@ class Cart extends Component{
      };
 
     render(){
-        console.log(this.state.items)
         return(
             <div>
                 {this.state.items.map(item => (
