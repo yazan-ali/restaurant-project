@@ -70,12 +70,16 @@ class Navbar extends Component{
   <li className="nav-item">
     <a className=" nav-link" href="/login">LOG IN</a>
   </li>
+  {this.props.userId.length < 0 &&
 	<li>
 	<a className=" nav-link" href="/current-user">Signed In As: {this.props.currentUser} </a>
-	</li> 
+  </li> 
+  }
+   {this.props.userId.length < 0 &&
   <li className="nav-item">
     <a onClick={this.handleClick} className=" nav-link" href="/logout">LOG OUT</a>
   </li>
+  }
 		  </ul> 
   </div>
 </nav>

@@ -46,7 +46,7 @@ const styles = theme => ({
     description: {
         lineHeight: "25px",
         [theme.breakpoints.down("sm")]: {
-          fontSize: "10px",
+          fontSize: "15px",
           lineHeight: "20px"
        }
     },
