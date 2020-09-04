@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import withStyles from "@material-ui/core/styles/withStyles";
-import Card from '../meals/card';
-import '../meals/pizzaList.css';
+import Card from './card';
+import './pizzaList.css';
 import Axios from 'axios';
-import { Link } from 'react-router-dom';
 
 const styles = theme => ({
   root: {
@@ -43,9 +42,9 @@ class DealsList extends Component{
           <div class="mt-3">
             <img className={classes.headerImg} alt="deals-img" src="https://martjackamstorage.azureedge.net/am-resources/c79bc8ac-4c69-460f-829b-4d40568d0cca/Images/userimages/banners-may/Deals_AR_Banner.jpg" />	
           </div>
-          <div>
-          <Link to='/deal/new'>add Deal</Link>
-          </div>
+          {this.props.isAdmin && (<div>
+           <a className="btn btn-danger mt-3" href='/deal/new'>add Deal</a>
+           </div>)}
             <div className={classes.root}>
             {this.props.deals.map( (deal, i)=> (
                 <Card

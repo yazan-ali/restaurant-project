@@ -27,7 +27,7 @@ class EditDeal extends Component{
             description: this.state.deal_description,
             price: this.state.deal_price
         }
-        this.props.isAdmin && Axios.put(`http://localhost:5000/deals/${this.props.id}`, updatedDeal)
+        this.props.isAdmin && Axios.put(`https://limitless-beyond-06124.herokuapp.com/deals/${this.props.id}`, updatedDeal)
         .then(res => console.log(res.data))
     }
     render(){

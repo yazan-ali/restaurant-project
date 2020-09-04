@@ -28,7 +28,7 @@ class CreateDeal extends Component{
             price: this.state.deal_price
         }
         console.log(deal);
-        this.props.isAdmin && Axios.post('http://localhost:5000/deals', deal)
+        this.props.isAdmin && Axios.post('https://limitless-beyond-06124.herokuapp.com/deals', deal)
         .then(res => console.log(res.data))
         this.setState({
             deal_img: "",

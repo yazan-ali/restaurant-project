@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import CartCard from './cartCard';
-import { mergeClasses } from '@material-ui/styles';
 
 class Cart extends Component{
     constructor(props){
