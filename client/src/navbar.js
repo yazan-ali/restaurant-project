@@ -64,7 +64,7 @@ class Navbar extends Component{
         <a className="nav-link main-nav-link" href="/pizza-house/desserts">Desserts</a>
       </li>
       <li className="nav-item">
-        <a className="nav-link main-nav-link " href="/deals">Deals</a>
+        <a className="nav-link main-nav-link " href="/pizza-house/deals">Deals</a>
       </li>
       {this.props.userId &&
       <li className="nav-item">
