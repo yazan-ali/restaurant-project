@@ -13,6 +13,7 @@ const pizzaRoutes = require("./routes/pizza");
 const pastaRoutes = require("./routes/pasta");
 const dessertRoutes = require("./routes/dessert");
 const startersRoutes = require("./routes/starters");
+const dealsRoutes = require("./routes/deals");
 const userRoutes = require("./routes/user");
 const cartRouts = require("./routes/cart");
 
@@ -69,6 +70,7 @@ app.use(pizzaRoutes);
 app.use(pastaRoutes);
 app.use(dessertRoutes);
 app.use(startersRoutes);
+app.use(dealsRoutes);
 app.use(userRoutes);
 app.use(cartRouts);
 

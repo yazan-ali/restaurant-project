@@ -8,12 +8,15 @@ import ChickenPizzaList from './chickenPizza';
 import VegetarianPizzaList from './vegetarianPizza';
 import PastaList from './pastaList';
 import DessertList from './dessertList';
+import DealsList from './meals/dealsList';
 import CreatePizza from './createPizza';
 import EditPizza from './editPizza';
 import CreatePasta from './createPasta';
 import EditPasta from './editPasta';
 import EditDessert from './editDessert';
 import CreateDessert from './createDessert';
+import EditDeal from './meals/editDeal';
+import CreateDeal from './meals/createDeal';
 import CreateStarters from './createAddOns';
 import Register from './register';
 import AdminRegister from './adminRegister';
@@ -25,7 +28,7 @@ import Axios from 'axios';
 class App extends Component{
   constructor(props){
     super(props);
-    this.state={pizza: [], beefPizza: [], chickenPizza: [], vegetarianPizza: [], pasta: [], dessert: [], user: ""}
+    this.state={pizza: [], beefPizza: [], chickenPizza: [], vegetarianPizza: [], pasta: [], dessert: [], user: [], deals: []}
   }
 
   componentDidMount(){
@@ -80,6 +83,13 @@ class App extends Component{
         this.setState({dessert: res.data})
       }
     });
+    // get all deals
+    Axios.get('https://limitless-beyond-06124.herokuapp.com/deals')
+    .then(res => {
+      if(res.data.length > 0){
+        this.setState({deals: res.data})
+      }
+    });
   }
 
   render(){
@@ -112,6 +122,11 @@ class App extends Component{
               id={dessert._id} dessert={dessert} />}/>
           ))}
           <Route exact path="/starters/new" render={() => <CreateStarters isAdmin={user.isAdmin} />}/>
+          <Route exact path="/deals" render={() => <DealsList deals={this.state.deals} isAdmin={user.isAdmin} userId={user.id} />}/>
+          <Route exact path="/deal/new" render={() => <CreateDeal isAdmin={user.isAdmin} />}/>
+          {this.state.deals.map((deal, i) => (
+              <Route exact path={`/deals/edit${i}/:id`} render={(routeProps) => <EditDeal id={deal._id} deals={deal} />}/>
+          ))}
           <Route exact path="/register" render={() => <Register />}/>
           <Route exact path="/register/admin" render={() => <AdminRegister />}/>
           <Route exact path="/login" render={(routeProps) => <Login {...routeProps} />}/>

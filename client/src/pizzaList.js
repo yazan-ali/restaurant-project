@@ -7,7 +7,7 @@ import Axios from 'axios';
 
 const styles = theme => ({
     root: {
-    marginTop: "3rem",
+    marginTop: "1.5rem",
     [theme.breakpoints.up("md")]: {
       display: "flex",
       justifyContent: "space-between",
