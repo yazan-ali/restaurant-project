@@ -26,7 +26,7 @@ class Cart extends Component{
     render(){
         return(
             <div>
-                {this.state.items.length > 0 ?
+                {this.state.items ?
                 <>
                 {this.state.items.map(item => (
                   <CartCard 
