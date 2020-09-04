@@ -43,7 +43,7 @@ class DealsList extends Component{
             <img className={classes.headerImg} alt="deals-img" src="https://martjackamstorage.azureedge.net/am-resources/c79bc8ac-4c69-460f-829b-4d40568d0cca/Images/userimages/banners-may/Deals_AR_Banner.jpg" />	
           </div>
           {this.props.isAdmin && (<div>
-           <a className="btn btn-danger mt-3" href='/deal/new'>add Deal</a>
+           <a className="btn btn-danger mt-3" href='/deal/new'>add deal</a>
            </div>)}
             <div className={classes.root}>
             {this.props.deals.map( (deal, i)=> (
@@ -58,6 +58,9 @@ class DealsList extends Component{
                  index={i}
                  formType="deals"
                  handleDelete={this.handleDelete}
+                 isAdmin={this.props.isAdmin}
+                 userId={this.props.userId}
+                 key={dessert._id}
                  />
            ))}
            </div>
