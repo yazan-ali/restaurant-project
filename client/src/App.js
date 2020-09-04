@@ -125,7 +125,7 @@ class App extends Component{
           <Route exact path="/pizza-house/deals" render={() => <DealsList deals={this.state.deals} isAdmin={user.isAdmin} userId={user.id} />}/>
           <Route exact path="/deal/new" render={() => <CreateDeal isAdmin={user.isAdmin} />}/>
           {this.state.deals.map((deal, i) => (
-              <Route exact path={`/deals/edit${i}/:id`} render={(routeProps) => <EditDeal id={deal._id} deals={deal} />}/>
+              <Route exact path={`/deals/edit${i}/:id`} render={(routeProps) => <EditDeal isAdmin={user.isAdmin} id={deal._id} deals={deal} />}/>
           ))}
           <Route exact path="/register" render={() => <Register />}/>
           <Route exact path="/register/admin" render={() => <AdminRegister />}/>

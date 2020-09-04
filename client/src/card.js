@@ -48,7 +48,10 @@ title: {
 price: {
   fontSize: "2rem",
   fontWeight: 500,
-  marginLeft: "2rem",
+  marginLeft: "1.8rem",
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "1.5rem",
+ }
 },
 formControl: {
   margin: theme.spacing(1),
