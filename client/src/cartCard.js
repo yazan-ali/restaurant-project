@@ -34,14 +34,13 @@ const styles = theme => ({
         justifyContent: "space-between"
     },
     img: {
-        // width: "180px"
+      width: "180px",
+      [theme.breakpoints.down("sm")]: {
+        width: "80px"
+       }
     },
     name:{
         color: "#c8102e",
-        fontSize: "18px",
-        [theme.breakpoints.up("md")]: {
-          fontSize: "25px"
-      }
     },
     description: {
         lineHeight: "25px",
@@ -102,7 +101,8 @@ class CartCard extends Component{
                         <div className={classes.img}> <img src={img} alt={name} /> </div>
                         <div className={classes.name_description}>
                             <div className={classes.name_qty}>
-                            <h3 className={classes.name}> {name} </h3>
+                            <h3 className={`d-none d-md-block ${classes.title}`}> {name} </h3>
+                            <h4 className={`d-md-none d-block ${classes.title}`}> {name} </h4>                             
                             <div className={classes.qty_icon}>
                                 <AddCircleIcon onClick={() => this.handleQtyChange(+1)} style={{color:"#2AB840"}} className={classes.icon} />
                                 <Typography variant="h5" className={classes.qty}> {this.state.qty} </Typography>
