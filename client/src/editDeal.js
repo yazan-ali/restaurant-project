@@ -11,7 +11,7 @@ class EditDeal extends Component{
             deal_img: this.props.deals.deal_img,
             deal_name: this.props.deals.deal_name,
             deal_description: this.props.deals.deal_description,
-            deal_price: this.props.deal.deals_price
+            deal_price: this.props.deals.deal_price
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);

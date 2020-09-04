@@ -40,7 +40,7 @@ class DealsList extends Component{
         return(
             <>
           <div class="mt-3">
-            <img className={classes.headerImg} alt="deals-img" src="https://martjackamstorage.azureedge.net/am-resources/c79bc8ac-4c69-460f-829b-4d40568d0cca/Images/userimages/banners-may/Deals_AR_Banner.jpg" />	
+            <img className={classes.headerImg} alt="deals-img" src="https://storage.eu.content-cdn.io/am-resources/c79bc8ac-4c69-460f-829b-4d40568d0cca/Images/userimages/banners-may/Deals_banner.jpg" />	
           </div>
           {this.props.isAdmin && (<div>
            <a className="btn btn-danger mt-3" href='/deal/new'>add deal</a>
