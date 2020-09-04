@@ -37,7 +37,11 @@ const styles = theme => ({
       // width: "180px",
     },
     name:{
-        color: "#c8102e",
+      color: "#c8102e",
+      fontSize: "15px",
+      [theme.breakpoints.up("md")]: {
+       fontSize: "25px"
+      }
     },
     description: {
         lineHeight: "25px",

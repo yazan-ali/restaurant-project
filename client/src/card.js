@@ -39,15 +39,15 @@ const styles = theme => ({
 },
 title: {
   color: "#c8102e",
+  fontSize: "15px",
+  [theme.breakpoints.up("md")]: {
+   fontSize: "25px"
+}
 },
 price: {
-  fontSize: "1.9rem",
+  fontSize: "2rem",
   fontWeight: 500,
   marginLeft: "2rem",
-  [theme.breakpoints.down("sm")]: {
-    fontSize: "1.3rem",
-    marginLeft: "1rem"
- }
 },
 formControl: {
   margin: theme.spacing(1),
@@ -61,10 +61,7 @@ description: {
  }
 },
 img: {
-  width: "180px",
-  [theme.breakpoints.down("sm")]: {
-    width: "80px"
-   }
+  width: "180px"
 },
 edit_delete_btn: {
   display: "flex",
@@ -215,9 +212,8 @@ class Card extends Component{
         </div>
         <div className={classes.content}>
           <div style={{display:"flex"}}>
-          <h3 className={`d-none d-md-block ${classes.title}`}> {name} </h3>
-          <h4 className={`d-md-none d-block ${classes.title}`}> {name} </h4> 
-          {this.props.isAdmin && ( <div className={classes.edit_delete_btn}>
+         <h3 className={classes.title}> {name} </h3>
+         {this.props.isAdmin && ( <div className={classes.edit_delete_btn}>
         <a className="btn btn-secondary " href={`/${formType}/edit${index}/${id}`}>Edit</a>
         <button className="btn btn-danger ml-2" onClick={this.handleDelete}>Delete</button>
         </div>)}
@@ -253,7 +249,7 @@ class Card extends Component{
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">{"Log in first"}</DialogTitle>
+        <DialogTitle id="alert-dialog-title">{"You should be logged in to add this item to cart"}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
             You should be logged in to add this item to cart
