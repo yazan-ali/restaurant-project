@@ -106,26 +106,26 @@ class App extends Component{
           <Route exact path="/pizza-house/pizza/type/vegetarian" render={() => <VegetarianPizzaList pizza={this.state.vegetarianPizza} />}/>
           <Route exact path="/pizza/new/add" render={() => <CreatePizza isAdmin={user.isAdmin} />}/>
           {this.state.pizza.map((pizza, i) => (
-              <Route exact path={`/pizza/edit${i}/:id`} render={(routeProps) => <EditPizza isAdmin={user.isAdmin}
+              <Route exact path={`/pizza/edit${i}/:id`} render={() => <EditPizza isAdmin={user.isAdmin}
                id={pizza._id} pizza={pizza} />}/>
           ))}
           <Route exact path="/pizza-house/pasta" render={() => <PastaList pasta={this.state.pasta} isAdmin={user.isAdmin} userId={user.id} />}/>
           <Route exact path="/pasta/new" render={() => <CreatePasta isAdmin={user.isAdmin} />}/>
           {this.state.pasta.map((pasta, i) => (
-              <Route exact path={`/pasta/edit${i}/:id`} render={(routeProps) => <EditPasta isAdmin={user.isAdmin} 
+              <Route exact path={`/pasta/edit${i}/:id`} render={() => <EditPasta isAdmin={user.isAdmin} 
               id={pasta._id} pasta={pasta} />}/>
           ))}
           <Route exact path="/pizza-house/desserts" render={() => <DessertList dessert={this.state.dessert} isAdmin={user.isAdmin} userId={user.id} />}/>
           <Route exact path="/desserts/new" render={() => <CreateDessert isAdmin={user.isAdmin} />}/>
           {this.state.dessert.map((dessert, i) => (
-              <Route exact path={`/desserts/edit${i}/:id`} render={(routeProps) => <EditDessert isAdmin={user.isAdmin}
+              <Route exact path={`/desserts/edit${i}/:id`} render={() => <EditDessert isAdmin={user.isAdmin}
               id={dessert._id} dessert={dessert} />}/>
           ))}
           <Route exact path="/starters/new" render={() => <CreateStarters isAdmin={user.isAdmin} />}/>
           <Route exact path="/pizza-house/deals" render={() => <DealsList deals={this.state.deals} isAdmin={user.isAdmin} userId={user.id} />}/>
           <Route exact path="/deal/new" render={() => <CreateDeal isAdmin={user.isAdmin} />}/>
           {this.state.deals.map((deal, i) => (
-              <Route exact path={`/deals/edit${i}/:id`} render={(routeProps) => <EditDeal isAdmin={user.isAdmin} id={deal._id} deals={deal} />}/>
+              <Route exact path={`/deals/edit${i}/:id`} render={() => <EditDeal isAdmin={user.isAdmin} id={deal._id} deals={deal} />}/>
           ))}
           <Route exact path="/register" render={() => <Register />}/>
           <Route exact path="/register/admin" render={() => <AdminRegister />}/>

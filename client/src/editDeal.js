@@ -8,10 +8,10 @@ class EditDeal extends Component{
     constructor(props){
         super(props);
         this.state = {
-            deal_img: this.props.deal.deal_img,
-            deal_name: this.props.deal.deal_name,
-            deal_description: this.props.deal.deal_description,
-            deal_price: this.props.deal.deal_price
+            deal_img: this.props.deals.deal_img,
+            deal_name: this.props.deals.deal_name,
+            deal_description: this.props.deals.deal_description,
+            deal_price: this.props.deal.deals_price
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
