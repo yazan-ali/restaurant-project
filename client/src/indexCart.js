@@ -26,8 +26,6 @@ class Cart extends Component{
     render(){
         return(
             <div>
-                {this.state.items ?
-                <>
                 {this.state.items.map(item => (
                   <CartCard 
                   id = {item._id}
@@ -44,10 +42,6 @@ class Cart extends Component{
                   handleDelete = {this.handleDelete}
                   />
                 ))}
-                </>
-                : 
-                <h4 style={{margin: "auto"}}>the shopping cart is empty</h4>
-                }
             </div>
         );
     };

@@ -253,7 +253,7 @@ class Card extends Component{
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">{"You should be logged in to add this item to cart"}</DialogTitle>
+        <DialogTitle id="alert-dialog-title">{""}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
             You should be logged in to add this item to cart

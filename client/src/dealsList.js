@@ -54,7 +54,7 @@ class DealsList extends Component{
                  description={deal.deal_description} 
                  price={deal.deal_price} 
                  selectItem={false}
-                 showDialog={true}
+                 showDialog={false}
                  index={i}
                  formType="deals"
                  handleDelete={this.handleDelete}

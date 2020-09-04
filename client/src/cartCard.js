@@ -122,7 +122,7 @@ class CartCard extends Component{
                             <Typography variant="h5" className={classes.description}> {description} </Typography>
                             </div>
                         </div>
-                        {this.props.mealType !== "desserts" ? (
+                        {this.props.mealType !== "desserts" || "deals" ? (
                         <>
                             {this.props.mealType === "pizza" ? (<div className={classes.size_type}>
                             <FormControl className={classes.formControl}>
