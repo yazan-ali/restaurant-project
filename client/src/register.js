@@ -48,7 +48,8 @@ class Register extends Component{
         username: "",
         user_name: "",
         password: "",
-        showPassword: false
+        showPassword: false,
+        redirect: false
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -75,11 +76,14 @@ handleSubmit(e){
       withCredentials: true,
       url: "https://limitless-beyond-06124.herokuapp.com/register",
     }).then((res) => console.log(res));
+
+    setTimeout(() => this.setState({redirect: true}),1000)
   };
     render(){
       const { classes } = this.props;
         return(
           <main className={classes.main}>
+            { this.state.redirect && <Redirect to="/login" /> }
           <Paper className={classes.paper}>
             <Avatar className={classes.avatar}>
                <LockOutlinedIcon/>

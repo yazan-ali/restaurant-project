@@ -23,6 +23,7 @@ import Axios from 'axios';
 const styles = theme => ({
   root: {
     width: "98vw",
+    backgroundColor: "#FCFCFC",
     display: "flex",
     justifyContent: "space-between",
     border: "1.5px solid #CCCCCC ",
@@ -39,7 +40,7 @@ const styles = theme => ({
 },
 title: {
   color: "#c8102e",
-  fontSize: "15px",
+  fontSize: "18px",
   [theme.breakpoints.up("md")]: {
    fontSize: "25px"
 }

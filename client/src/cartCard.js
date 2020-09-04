@@ -16,6 +16,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 const styles = theme => ({
     root: {
         display: "flex",
+        backgroundColor: "#F5F5F5",
         flexDirection: "column",
         width: "98vw",
         margin: "2rem auto",
@@ -36,9 +37,9 @@ const styles = theme => ({
     img: {
       // width: "180px",
     },
-    name:{
+    title:{
       color: "#c8102e",
-      fontSize: "15px",
+      fontSize: "18px",
       [theme.breakpoints.up("md")]: {
        fontSize: "25px"
       }
@@ -111,8 +112,7 @@ class CartCard extends Component{
                         <div className={classes.img}> <img src={img} alt={name} /> </div>
                         <div className={classes.name_description}>
                             <div className={classes.name_qty}>
-                            <h3 className={`d-none d-md-block ${classes.title}`}> {name} </h3>
-                            <h4 className={`d-md-none d-block ${classes.title}`}> {name} </h4> 
+                            <h3 className={classes.title}> {name} </h3>
                             <div className={classes.qty_icon}>
                                 <AddCircleIcon onClick={() => this.handleQtyChange(+1)} style={{color:"#2AB840"}} className={classes.icon} />
                                 <Typography variant="h5" className={classes.qty}> {this.state.qty} </Typography>
