@@ -60,7 +60,7 @@ class DealsList extends Component{
                  handleDelete={this.handleDelete}
                  isAdmin={this.props.isAdmin}
                  userId={this.props.userId}
-                 key={dessert._id}
+                 key={deal._id}
                  />
            ))}
            </div>
