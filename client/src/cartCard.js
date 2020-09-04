@@ -16,7 +16,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 const styles = theme => ({
     root: {
         display: "flex",
-        backgroundColor: "#F5F5F5",
+        backgroundColor: "#FCFCFC",
         flexDirection: "column",
         width: "98vw",
         margin: "2rem auto",

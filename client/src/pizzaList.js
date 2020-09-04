@@ -14,30 +14,16 @@ const styles = theme => ({
       flexWrap: "wrap"
         }
     },
-    // pizzaNav: {
-    //   background: "black",
-    //   opacity: "75%", 
-    //   color: "white", 
-    //   position: "relative",
-    //   bottom: "30px",
-    //   width: "1110px"
-    //   },
-    //   pizzaNav: {
-    //     "& a": {
-    //       color: "white",
-    //       padding: "2px 30px",
-    //       fontSize: "18px",  
-    //     },
-    //   },
-    //   pizzaNavImg: {
-    //   width: "1225px"
-    //   },
-    //   pizzaNav: {
-    //     "& a:hover": {
-    //       color: "#c8102e",
-    //       textDecoration: "none"
-    //     }		 		
-    //   }
+      pizzaNav: {
+        [theme.breakpoints.down("sm")]:{
+          bottom:"32px",
+        },
+        "& a": {
+         [theme.breakpoints.down("sm")]:{
+          padding:"2px 10px",
+         }
+        },
+      },
   });
 
 
@@ -60,9 +46,9 @@ class PizzaList extends Component{
     const { classes } = this.props;
         return(
           <>
-           <div className="d-none d-sm-block mt-3">
-             <img style={{width: "100%"}} alt="pizza-img" src="https://martjackamstorage.azureedge.net/am-resources/c79bc8ac-4c69-460f-829b-4d40568d0cca/Images/userimages/banners-may/Pizza_Banner-en.jpg" />	
-             <ul className="nav pizza-nav">
+           <div className="mt-3">
+             <img alt="pizza-img" src="https://martjackamstorage.azureedge.net/am-resources/c79bc8ac-4c69-460f-829b-4d40568d0cca/Images/userimages/banners-may/Pizza_Banner-en.jpg" />	
+             <ul className={`nav pizza-nav ${classes.pizzaNav}`}>
              <li className="nav-item"><a className="nav-link" href="/pizza-house/pizza">ALL</a></li>	
              <li className="nav-item"><a className="nav-link" href="/pizza-house/pizza/type/beef">BEEF</a></li>	
              <li className="nav-item"><a className="nav-link" href="/pizza-house/pizza/type/chicken">CHICKEN</a></li>	

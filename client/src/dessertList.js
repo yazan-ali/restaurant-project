@@ -34,7 +34,7 @@ class DessertList extends Component{
     const { classes } = this.props;
         return(
           <>
-          <div class="d-none d-sm-block mt-3">
+          <div class="mt-3">
             <img style={{width: "100%"}} alt="dessert-img" src="https://martjackamstorage.azureedge.net/am-resources/c79bc8ac-4c69-460f-829b-4d40568d0cca/Images/userimages/banners-may/Desserts_Banner.jpg" />	
           </div>
           {this.props.isAdmin && (<div>

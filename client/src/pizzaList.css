@@ -3,13 +3,16 @@
     opacity: 0.75; 
     color:white; 
     position:relative;
-    bottom:30px;
+    bottom:32px;
     width:100%;    
     }
     .pizza-nav a{
     color:white;
     padding:2px 40px;
     font-size:18px;  	
+    }
+    .pizza-nav-img{
+     width:100%;
     }
     .pizza-nav a:hover{
     color:#c8102e;
