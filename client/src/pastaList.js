@@ -12,6 +12,12 @@ const styles = theme => ({
       justifyContent: "space-between",
       flexWrap: "wrap"
         }
+    },
+    headerImg: {
+      width: "100%",
+      [theme.breakpoints.down("sm")]:{
+        height: "120px"
+      },
     }
   });
 
@@ -45,7 +51,7 @@ class PastaList extends Component{
         return(
           <>
           <div class="mt-3">
-            <img style={{width: "100%", height: "120px"}} alt="pasta-img" src="https://martjackamstorage.azureedge.net/am-resources/c79bc8ac-4c69-460f-829b-4d40568d0cca/Images/userimages/banners-may/Pasta_Banner.jpg" />	
+            <img className={classes.headerImg} style={{width: "100%" }} alt="pasta-img" src="https://martjackamstorage.azureedge.net/am-resources/c79bc8ac-4c69-460f-829b-4d40568d0cca/Images/userimages/banners-may/Pasta_Banner.jpg" />	
           </div>
           {this.props.isAdmin && (<div>
             <a className="btn btn-danger mt-3" href='/pasta/new'>add pasta</a>
