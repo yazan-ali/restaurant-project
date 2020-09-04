@@ -39,6 +39,15 @@ const styles = theme => ({
         width: "80px"
        }
     },
+    price: {
+      fontSize: "1.9rem",
+      fontWeight: 500,
+      marginLeft: "2rem",
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "1.3rem",
+        marginLeft: "1rem"
+     }
+    },
     name:{
         color: "#c8102e",
     },
