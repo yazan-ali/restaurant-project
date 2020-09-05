@@ -54,8 +54,7 @@ class Navbar extends Component{
   </button>
 
   <div className="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul className="navbar-nav mr-auto main-nav ">
-      <div>
+    <ul className="navbar-nav mr-auto d-flex">
       <li className="nav-item ">
         <a  href="/pizza-house/pizza" className="nav-link main-nav-link">Pizza<span className="sr-only">(current)</span></a>
       </li>
@@ -68,14 +67,11 @@ class Navbar extends Component{
       <li className="nav-item">
         <a className="nav-link main-nav-link " href="/pizza-house/deals">Deals</a>
       </li>
-      </div>
-      <div>
       {/* {this.props.userId && */}
-      <li className="nav-item">
+      <li className="nav-item justify-content-end">
         <a className="nav-link main-nav-link" href={`/cart/user/${this.props.userId}`}> <ShoppingCartIcon /> </a>
       </li>
     {/* } */}
-    </div>
     </ul>
     <ul className="nav navbar-nav navbar-right d-md-none">
     {!this.props.userId &&
