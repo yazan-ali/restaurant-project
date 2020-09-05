@@ -227,8 +227,8 @@ class Card extends Component{
           <div style={{display:"flex"}}>
          <h3 className={classes.title}> {name} </h3>
          {this.props.isAdmin && ( <div className={classes.edit_delete_btn}>
-        <a className="btn btn-secondary " href={`/${formType}/edit${index}/${id}`}>Edit</a>
-        <button className="btn btn-danger ml-2" onClick={this.handleDelete}>Delete</button>
+        <a href={`/${formType}/edit${index}/${id}`}><EditIcon /> </a>
+        <span className={classes.deleteIcon}  onClick={this.handleDelete}> <DeleteIcon/> </span>
         </div>)}
       </div>
           <Typography variant="h6" className={classes.description}> {description} </Typography>

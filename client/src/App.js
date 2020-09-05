@@ -29,7 +29,7 @@ import Axios from 'axios';
 class App extends Component{
   constructor(props){
     super(props);
-    this.state={pizza: [], beefPizza: [], chickenPizza: [], vegetarianPizza: [], pasta: [], dessert: [], user: [], deals: [], starters}
+    this.state={pizza: [], beefPizza: [], chickenPizza: [], vegetarianPizza: [], pasta: [], dessert: [], user: [], deals: [], starters: []}
   }
 
   componentDidMount(){
