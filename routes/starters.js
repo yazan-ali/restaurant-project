@@ -45,4 +45,16 @@ router.put("/starters/:id", (req,res) => {
 	});
 });
 
+// destroy route
+
+router.delete("/starters/:id", (req,res) => {
+	Starter.findByIdAndRemove(req.params.id, (err) =>{
+		if(err){
+			console.log(err);
+		} else{
+			res.redirect("/starters");
+		}
+	});
+});
+
 module.exports=router;

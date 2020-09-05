@@ -196,6 +196,13 @@ class Card extends Component{
   handleDelete(){
     this.props.handleDelete(this.props.id);
   }
+
+  handleStarterDelete(id){
+    Axios.delete(`https://limitless-beyond-06124.herokuapp.com/starters/${id}`)
+    .then(res => console.log(res.data));
+    this.setState({AddOns: this.state.AddOns.filter(starter => starter._id !== id)
+    });
+  };
   
   totalPrice(){
     const addOnsPrice = this.state.AddOns.map( addOn => addOn.checked ? Number(addOn.starter_price) : 0 );
@@ -300,9 +307,17 @@ class Card extends Component{
             </RadioGroup>
            </FormControl>
            <FormGroup row>
+           <a className="btn btn-danger" href="/starters/new">Add starter</a>
             {AddOns.map( addOn => (
               <FormControlLabel
               control={
+                <>
+                {this.props.isAdmin && 
+                <>
+                <span className={classes.deleteIcon} onClick={() => this.handleStarterDelete(addOn._id)}> < DeleteIcon/> </span>
+                <a href ={`/starters/edit${i}/:id`}><EditIcon/></a>
+                </>
+              }
                 <Checkbox
                   key= {addOn._id}
                   checked={addOn.checked}
@@ -310,6 +325,7 @@ class Card extends Component{
                   name={addOn.starter_name}
                   // color="primary"
                 />
+                </>
               }
               label={`${addOn.starter_name} ${addOn.starter_price} JD`}
             />

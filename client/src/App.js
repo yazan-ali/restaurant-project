@@ -16,6 +16,7 @@ import EditPasta from './editPasta';
 import EditDessert from './editDessert';
 import CreateDessert from './createDessert';
 import EditDeal from './editDeal';
+import EditStarter from './editStarter';
 import CreateDeal from './createDeal';
 import CreateStarters from './createAddOns';
 import Register from './register';
@@ -28,7 +29,7 @@ import Axios from 'axios';
 class App extends Component{
   constructor(props){
     super(props);
-    this.state={pizza: [], beefPizza: [], chickenPizza: [], vegetarianPizza: [], pasta: [], dessert: [], user: [], deals: []}
+    this.state={pizza: [], beefPizza: [], chickenPizza: [], vegetarianPizza: [], pasta: [], dessert: [], user: [], deals: [], starters}
   }
 
   componentDidMount(){
@@ -90,6 +91,13 @@ class App extends Component{
         this.setState({deals: res.data})
       }
     });
+    // get all starter
+    Axios.get('https://limitless-beyond-06124.herokuapp.com/starters')
+    .then(res => {
+      if(res.data.length >0){
+        this.setState({starters: res.data})
+      }
+    });
   }
 
   render(){
@@ -126,6 +134,9 @@ class App extends Component{
           <Route exact path="/deal/new" render={() => <CreateDeal isAdmin={user.isAdmin} />}/>
           {this.state.deals.map((deal, i) => (
               <Route exact path={`/deals/edit${i}/:id`} render={() => <EditDeal isAdmin={user.isAdmin} id={deal._id} deals={deal} />}/>
+          ))}
+          {this.state.starters.map((starter, i) => (
+          <Route exact path={`/starters/edit${i}/:id`} render={() => <EditStarter id={starter._id} starter={starter} />}/>
           ))}
           <Route exact path="/register" render={() => <Register />}/>
           <Route exact path="/register/admin" render={() => <AdminRegister />}/>
