@@ -69,7 +69,7 @@ class Navbar extends Component{
       </li>
       {/* {this.props.userId && */}
       <div>
-      <li className="nav-item">
+      <li className="nav-item justify-content-end">
         <a className="nav-link main-nav-link" href={`/cart/user/${this.props.userId}`}> <ShoppingCartIcon /> </a>
       </li>
       </div>
