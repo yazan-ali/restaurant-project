@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import Axios from 'axios';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
@@ -23,7 +23,7 @@ class EditStarter extends Component{
             name: this.state.starter_name,
             price: this.state.starter_price
         }
-        axios.put(`http://localhost:5000/starters/${this.props.id}`, updatedstarter)
+        Axios.put(`https://limitless-beyond-06124.herokuapp.com/starters/${this.props.id}`, updatedstarter)
         .then(res => console.log(res.data))
     }
     render(){
