@@ -54,7 +54,7 @@ class Navbar extends Component{
   </button>
 
   <div className="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul className="navbar-nav mr-auto d-flex">
+    <ul className="navbar-nav mr-auto">
       <li className="nav-item ">
         <a  href="/pizza-house/pizza" className="nav-link main-nav-link">Pizza<span className="sr-only">(current)</span></a>
       </li>
@@ -68,7 +68,7 @@ class Navbar extends Component{
         <a className="nav-link main-nav-link " href="/pizza-house/deals">Deals</a>
       </li>
       {/* {this.props.userId && */}
-      <li className="nav-item justify-content-end">
+      <li className="nav-item">
         <a className="nav-link main-nav-link" href={`/cart/user/${this.props.userId}`}> <ShoppingCartIcon /> </a>
       </li>
     {/* } */}
