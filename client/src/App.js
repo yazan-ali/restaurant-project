@@ -136,7 +136,7 @@ class App extends Component{
               <Route exact path={`/deals/edit${i}/:id`} render={() => <EditDeal isAdmin={user.isAdmin} id={deal._id} deals={deal} />}/>
           ))}
           {this.state.starters.map((starter, i) => (
-          <Route exact path={`/starters/edit${i}/:id`} render={() => <EditStarter id={starter._id} starter={starter} />}/>
+          <Route exact path={`/starters/edit${i}/:id`} render={() => <EditStarter isAdmin={user.isAdmin} id={starter._id} starter={starter} />}/>
           ))}
           <Route exact path="/register" render={() => <Register />}/>
           <Route exact path="/register/admin" render={() => <AdminRegister />}/>

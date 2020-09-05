@@ -81,6 +81,9 @@ addToCartBtn: {
     backgroundColor: "#c8102e",
     color: "white",
   }
+},
+deleteIcon:{
+  color:"#D83616"
 }
 });
 
@@ -102,6 +105,7 @@ class Card extends Component{
       this.handleClose = this.handleClose.bind(this);
       this.handleCheck = this.handleCheck.bind(this);
       this.handleDelete = this.handleDelete.bind(this);
+      this.handleStarterDelete = this.handleStarterDelete.bind(this);
       this.handleRadioChange = this.handleRadioChange.bind(this);
       this.handleAddToCart = this.handleAddToCart.bind(this);
   }

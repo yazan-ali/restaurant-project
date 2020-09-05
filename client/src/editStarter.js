@@ -23,7 +23,7 @@ class EditStarter extends Component{
             name: this.state.starter_name,
             price: this.state.starter_price
         }
-        Axios.put(`https://limitless-beyond-06124.herokuapp.com/starters/${this.props.id}`, updatedstarter)
+        this.props.isAdmin && Axios.put(`https://limitless-beyond-06124.herokuapp.com/starters/${this.props.id}`, updatedstarter)
         .then(res => console.log(res.data))
     }
     render(){
