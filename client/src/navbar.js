@@ -2,6 +2,17 @@ import React, { Component } from 'react';
 import './navbar.css';
 import Axios from 'axios';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import withStyles from "@material-ui/core/styles/withStyles";
+
+
+
+const styles = theme => ({
+  cart:{
+  [theme.breakpoints.up("md")]: {
+    marginLeft: "750px"
+  },
+}
+})
 
 class Navbar extends Component{
   constructor(props){
@@ -67,11 +78,16 @@ class Navbar extends Component{
       <li className="nav-item">
         <a className="nav-link main-nav-link " href="/pizza-house/deals">Deals</a>
       </li>
-      {/* {this.props.userId && */}
-      <li className="nav-item cart">
+      <li className={"nav-item d-block d-md-none "}>
         <a className="nav-link main-nav-link" href={`/cart/user/${this.props.userId}`}> <ShoppingCartIcon /> </a>
       </li>
-    {/* } */}
+      </ul>
+      <ul class="nav justify-content-end">
+      {this.props.userId &&
+      <li className={"nav-item  d-none d-md-block "}>
+        <a className="nav-link main-nav-link" href={`/cart/user/${this.props.userId}`}> <ShoppingCartIcon /> </a>
+      </li>
+      }
     </ul>
     <ul className="nav navbar-nav navbar-right d-md-none">
     {!this.props.userId &&
@@ -102,4 +118,4 @@ class Navbar extends Component{
   };
 };
 
-export default Navbar;
+export default withStyles(styles)(Navbar);

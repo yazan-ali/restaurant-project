@@ -313,7 +313,7 @@ class Card extends Component{
             </RadioGroup>
            </FormControl>
            <FormGroup row>
-           <a className="btn btn-danger" href="/starters/new">Add starter</a>
+            {this.props.isAdmin && <a className="btn btn-danger" href="/starters/new">Add starter</a> }
             {AddOns.map( (addOn, i) => (
               <FormControlLabel
               control={
