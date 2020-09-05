@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './navbar.css';
 import Axios from 'axios';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 class Navbar extends Component{
   constructor(props){
@@ -66,11 +67,13 @@ class Navbar extends Component{
       <li className="nav-item">
         <a className="nav-link main-nav-link " href="/pizza-house/deals">Deals</a>
       </li>
-      {this.props.userId &&
+      {/* {this.props.userId && */}
+      <div>
       <li className="nav-item">
-    <a className="nav-link main-nav-link" href={`/cart/user/${this.props.userId}`}>Shopping Cart</a>
+        <a className="nav-link main-nav-link" href={`/cart/user/${this.props.userId}`}> <ShoppingCartIcon /> </a>
       </li>
-    }
+      </div>
+    {/* } */}
     </ul>
     <ul className="nav navbar-nav navbar-right d-md-none">
     {!this.props.userId &&
