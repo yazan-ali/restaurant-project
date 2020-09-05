@@ -22,6 +22,7 @@
     .regester-link:hover{
     color:#c8102e;	
     }
-    .cart{
-    margin-right: 0;
+    .main-nav{
+        display: flex;
+        justify-content: space-between;
     }
