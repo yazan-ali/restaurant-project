@@ -314,7 +314,7 @@ class Card extends Component{
            </FormControl>
            <FormGroup row>
            <a className="btn btn-danger" href="/starters/new">Add starter</a>
-            {AddOns.map( addOn => (
+            {AddOns.map( (addOn, i) => (
               <FormControlLabel
               control={
                 <>
