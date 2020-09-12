@@ -83,7 +83,10 @@ addToCartBtn: {
   }
 },
 deleteIcon:{
-  color:"#D83616"
+  color:"#D83616",
+  "& hover":{
+    pointer: "cursor"
+  }
 }
 });
 
