@@ -49,7 +49,6 @@ class PizzaList extends Component{
            {this.props.isAdmin && (<div>
            <a className="btn btn-danger mt-3" href='/pizza/new/add'>add pizza</a>
            </div>)}
-           {/* <a href={`/cart/${this.props.userId}`}>Cart</a> */}
             <div className={classes.root}>
             {pizza.map( (pizza, i) => (
                 <Card

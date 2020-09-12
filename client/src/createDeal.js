@@ -84,7 +84,7 @@ class CreateDeal extends Component{
                   variant="filled"
                   fullWidth
                 />
-            <Button type="submit" variant="contained" color="secondary">Add Deal</Button>
+          <button className="btn btn-danger" type="submit" variant="contained" color="secondary">Add Deal</button>
        </form>
         );
     };

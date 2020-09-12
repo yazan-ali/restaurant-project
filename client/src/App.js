@@ -129,7 +129,7 @@ class App extends Component{
   handleDeleteDeal(id){
     this.state.user.isAdmin && Axios.delete(`https://limitless-beyond-06124.herokuapp.com/deal/${id}`)
     .then(res => console.log(res.data));
-    this.setState({deals: this.state.deal.filter(deal => deal._id !== id)
+    this.setState({deals: this.state.deals.filter(deal => deal._id !== id)
     });
   };
 
@@ -141,7 +141,7 @@ class App extends Component{
         <Container>
           <Navbar currentUser={user.user_name} userId={user.id} />
           <Route exact path="/" render={() => <PizzaList pizza={this.state.pizza}  isAdmin={user.isAdmin} userId={user.id} handleDelete={this.handleDeletePizza} />}/>
-          <Route exact path="/pizza-house/pizza" render={() => <PizzaList pizza={this.state.pizza} isAdmin={user.isAdmin} userId={user.id}  />}/>
+          <Route exact path="/pizza-house/pizza" render={() => <PizzaList pizza={this.state.pizza} isAdmin={user.isAdmin} userId={user.id} handleDelete={this.handleDeletePizza}  />}/>
           <Route exact path="/pizza-house/pizza/type/beef" render={() => <BeefPizzaList pizza={this.state.beefPizza} />}/>
           <Route exact path="/pizza-house/pizza/type/chicken" render={() => <ChickenPizzaList pizza={this.state.chickenPizza} />}/>
           <Route exact path="/pizza-house/pizza/type/vegetarian" render={() => <VegetarianPizzaList pizza={this.state.vegetarianPizza} />}/>

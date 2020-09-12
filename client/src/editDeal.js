@@ -77,7 +77,7 @@ class EditDeal extends Component{
                   variant="filled"
                   fullWidth
                 />
-            <Button type="submit" variant="contained" color="secondary">Update Deal</Button>
+                <button className="btn btn-danger" type="submit" variant="contained" color="secondary">Update</button>
        </form>
         );
     };
