@@ -104,8 +104,8 @@ class App extends Component{
     });
   }
 
-  handleDeletePizza(id, type){
-    this.user.isAdmin && Axios.delete(`https://limitless-beyond-06124.herokuapp.com/pizza/${id}`)
+  handleDeletePizza(id){
+    this.state.user.isAdmin && Axios.delete(`https://limitless-beyond-06124.herokuapp.com/pizza/${id}`)
     .then(res => console.log(res.data));
     this.setState({
       pizza: this.state.pizza.filter(pizza => pizza._id !== id)
@@ -113,21 +113,21 @@ class App extends Component{
   };
   
   handleDeletePasta(id){
-    this.user.isAdmin && Axios.delete(`https://limitless-beyond-06124.herokuapp.com/pasta/${id}`)
+    this.state.user.isAdmin && Axios.delete(`https://limitless-beyond-06124.herokuapp.com/pasta/${id}`)
     .then(res => console.log(res.data));
     this.setState({pasta: this.state.pasta.filter(pasta => pasta._id !== id)
     });
   };
 
   handleDeleteDessert(id){
-    this.user.isAdmin && Axios.delete(`https://limitless-beyond-06124.herokuapp.com/desserts/${id}`)
+    this.state.user.isAdmin && Axios.delete(`https://limitless-beyond-06124.herokuapp.com/desserts/${id}`)
     .then(res => console.log(res.data));
     this.setState({dessert: this.state.dessert.filter(dessert => dessert._id !== id)
     });
   };
 
   handleDeleteDeal(id){
-    this.user.isAdmin && Axios.delete(`https://limitless-beyond-06124.herokuapp.com/deal/${id}`)
+    this.state.user.isAdmin && Axios.delete(`https://limitless-beyond-06124.herokuapp.com/deal/${id}`)
     .then(res => console.log(res.data));
     this.setState({deals: this.state.deal.filter(deal => deal._id !== id)
     });
