@@ -200,7 +200,7 @@ class Card extends Component{
        }
 
   handleDelete(){
-    this.props.handleDelete(this.props.id, this.props.formType);
+    this.props.handleDelete(this.props.id);
   }
 
   handleStarterDelete(id){
