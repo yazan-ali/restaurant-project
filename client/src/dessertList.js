@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import withStyles from "@material-ui/core/styles/withStyles";
 import Card from './card';
 import './pizzaList.css';
-import Axios from 'axios';
 
 const styles = theme => ({
     root: {
@@ -23,21 +22,9 @@ const styles = theme => ({
 
 
 class DessertList extends Component{
-  constructor(props){
-    super(props);
-    this.state = {dessert: [] }
-    this.handleDelete = this.handleDelete.bind(this);
-  }
-
-  handleDelete(id){
-    this.props.isAdmin && Axios.delete(`https://limitless-beyond-06124.herokuapp.com/desserts/${id}`)
-    .then(res => console.log(res.data));
-    this.setState({dessert: this.props.dessert.filter(dessert => dessert._id !== id)
-    });
-  };
 
     render(){
-    const { classes } = this.props;
+    const { classes, dessert, handleDelete } = this.props;
         return(
           <>
           <div class="mt-3">
@@ -47,7 +34,7 @@ class DessertList extends Component{
             <a className="btn btn-danger mt-3" href='/desserts/new'>add dessert</a>
            </div>)}
             <div className={classes.root}>
-            {this.props.dessert.map( (dessert, i)=> (
+            {dessert.map( (dessert, i)=> (
                 <Card
                 id={dessert._id}
                  img={dessert.dessert_img} 
@@ -58,7 +45,7 @@ class DessertList extends Component{
                  showDialog={false}
                  index={i}
                  formType="desserts"
-                 handleDelete={this.handleDelete}
+                 handleDelete={handleDelete}
                  isAdmin={this.props.isAdmin}
                  userId={this.props.userId}
                  key={dessert._id}

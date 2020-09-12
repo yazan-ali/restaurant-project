@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import withStyles from "@material-ui/core/styles/withStyles";
 import Card from './card';
 import './pizzaList.css';
-import Axios from 'axios';
 
 const styles = theme => ({
     root: {
@@ -23,31 +22,9 @@ const styles = theme => ({
 
 
 class PastaList extends Component{
-  constructor(props){
-    super(props);
-    this.state = {pasta: [] }
-    this.handleDelete = this.handleDelete.bind(this);
-  }
-
-  // componentDidMount(){
-  //   Axios.get('http://localhost:5000/pasta')
-  //   .then(res => {
-  //     if(res.data.length > 0){
-  //       this.setState({pasta: res.data})
-  //     }
-  //   });
-  //   console.log(this.state.pasta);
-  // };
-
-  handleDelete(id){
-    this.props.isAdmin && Axios.delete(`https://limitless-beyond-06124.herokuapp.com/pasta/${id}`)
-    .then(res => console.log(res.data));
-    this.setState({pasta: this.props.pasta.filter(pasta => pasta._id !== id)
-    });
-  };
 
     render(){
-    const { classes } = this.props;
+    const { classes, pasta, handleDelete } = this.props;
         return(
           <>
           <div class="mt-3">
@@ -57,7 +34,7 @@ class PastaList extends Component{
             <a className="btn btn-danger mt-3" href='/pasta/new'>add pasta</a>
            </div>)}
             <div className={classes.root}>
-            {this.props.pasta.map( (pasta, i)=> (
+            {pasta.map( (pasta, i)=> (
                 <Card
                 id={pasta._id}
                  img={pasta.pasta_img} 
@@ -68,7 +45,7 @@ class PastaList extends Component{
                  showDialog={true}
                  index={i}
                  formType="pasta"
-                 handleDelete={this.handleDelete}
+                 handleDelete={handleDelete}
                  isAdmin={this.props.isAdmin}
                  userId={this.props.userId}
                  key={pasta._id}
