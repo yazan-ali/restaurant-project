@@ -30,12 +30,6 @@ class Navbar extends Component{
         <>
         <div className="d-none d-md-block">
 <ul className="nav regester-nav d-flex flex-row-reverse mt-2">
-  	{/* <div>
-  		<img src="https://voixdedeuxrives.com/wp-content/uploads/2018/04/halal.png " width="30" height="30">
-  	</div> */}
-  <li className="nav-item">
-    <a className="regester-link nav-link active" href="/find">FIND A PIZZA HUT</a>
-  </li>
   {!this.props.userId &&
   <li className="nav-item">
     <a className="regester-link nav-link" href="/register">CREATE AN ACCOUNT </a>
@@ -82,7 +76,7 @@ class Navbar extends Component{
         <a className="nav-link main-nav-link" href={`/cart/user/${this.props.userId}`}> <ShoppingCartIcon /> </a>
       </li>
       </ul>
-      <ul class="nav justify-content-end">
+      <ul className="nav justify-content-end">
       {this.props.userId &&
       <li className={"nav-item  d-none d-md-block "}>
         <a className="nav-link main-nav-link" href={`/cart/user/${this.props.userId}`}> <ShoppingCartIcon /> </a>
