@@ -37,7 +37,23 @@ class Cart extends Component{
     render(){
         return(
             <div>
-                {!this.props.userId && 
+                {this.state.items.map(item => (
+                  <CartCard 
+                  id = {item._id}
+                  key={item._id}
+                  mealType = {item.cartItem.mealType}
+                  img = {item.cartItem.img}
+                  name = {item.cartItem.name}
+                  description = {item.cartItem.description}
+                  size = {item.cartItem.size}
+                  type = {item.cartItem.type}
+                  total = {(item.cartItem.total)}
+                  drink = {(item.cartItem.drink).toUpperCase()}
+                  starters = {item.cartItem.addOne}
+                  handleDelete = {this.handleDelete}
+                  />
+                ))}
+                 {!this.props.userId && 
                <Dialog
                open={this.state.loginDialog}
                onClose={this.handleClose}
@@ -58,22 +74,6 @@ class Cart extends Component{
                </DialogActions>
              </Dialog>
              }
-                {this.state.items.map(item => (
-                  <CartCard 
-                  id = {item._id}
-                  key={item._id}
-                  mealType = {item.cartItem.mealType}
-                  img = {item.cartItem.img}
-                  name = {item.cartItem.name}
-                  description = {item.cartItem.description}
-                  size = {item.cartItem.size}
-                  type = {item.cartItem.type}
-                  total = {(item.cartItem.total)}
-                  drink = {(item.cartItem.drink).toUpperCase()}
-                  starters = {item.cartItem.addOne}
-                  handleDelete = {this.handleDelete}
-                  />
-                ))}
             </div>
         );
     };
