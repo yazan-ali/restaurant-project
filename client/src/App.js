@@ -176,7 +176,7 @@ class App extends Component{
           <Route exact path="/register" render={() => <Register />}/>
           <Route exact path="/register/admin" render={() => <AdminRegister />}/>
           <Route exact path="/login" render={(routeProps) => <Login {...routeProps} />}/>
-          <Route exact path='/cart/user/:id' render={ (routeProps) => <Cart {...routeProps} />}/>
+          <Route exact path='/cart/user/:id' render={ (routeProps) => <Cart {...routeProps} userId={user.id} />}/>
         </Container>
         </Switch>
       </div>

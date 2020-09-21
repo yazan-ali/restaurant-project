@@ -11,8 +11,9 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 class Cart extends Component{
     constructor(props){
         super(props);
-        this.state={items: [], loginDialog: false}
+        this.state={items: [], loginDialog: true}
         this.handleDelete = this.handleDelete.bind(this);
+        this.handleClose = this.handleClose.bind(this);
         Axios.get(`https://limitless-beyond-06124.herokuapp.com/cart/${this.props.match.params.id}`)
         .then(res => {
             if(res.data.length > 0){
@@ -23,14 +24,6 @@ class Cart extends Component{
 
     handleClose(){
         this.setState({loginDialog: false})
-    }
-
-    handleClickOpen(){
-      if(this.state.items.length === 0){
-        this.setState({loginDialog: true});
-      } else{
-        this.setState({loginDialog: false});
-      }
     }
 
     handleDelete(id){
@@ -44,6 +37,7 @@ class Cart extends Component{
     render(){
         return(
             <div>
+                {!this.props.userId && 
                <Dialog
                open={this.state.loginDialog}
                onClose={this.handleClose}
@@ -53,7 +47,7 @@ class Cart extends Component{
                <DialogTitle id="alert-dialog-title">{""}</DialogTitle>
                <DialogContent>
                  <DialogContentText id="alert-dialog-description">
-                   You should be logged in to add this item to cart
+                   You should be logged in to see the shopping cart
                  </DialogContentText>
                </DialogContent>
                <DialogActions>
@@ -63,6 +57,7 @@ class Cart extends Component{
                  <Button color="primary"><a style={{color:"#3f51b5", textDecoration:"none"}} href="/login">Login</a></Button>
                </DialogActions>
              </Dialog>
+             }
                 {this.state.items.map(item => (
                   <CartCard 
                   id = {item._id}
