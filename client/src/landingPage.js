@@ -17,9 +17,10 @@ const style = theme => ({
     carousel: {
       marginTop: "1rem"
     },
-    cardImg: {
-      width: "100px",
-      margin: "auto"
+    cardIcon: {
+      fontSize: "100px",
+      color: "#c8102e",
+      paddingTop: "10px"
     },
     card: {
       height: "400px",
@@ -47,7 +48,7 @@ class LandingPage extends Component{
                     <div className="carousel-item active">
                     <a href="/pizza-house">
                       <div>
-                      <img style={{height: "500px"}} src="https://luigispizza.jo/wp-content/uploads/2015/09/home-pizza-greca.jpg" className="d-block w-100" alt="carousel-img-1"/>
+                      <img style={{height: "500px"}} src="https://images.unsplash.com/photo-1595708684082-a173bb3a06c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1045&q=80" className="d-block w-100" alt="carousel-img-1"/>
                       <div className={`carousel-caption ${classes.carouselCap}`}>
                         <h2 className="d-none d-md-block">Fresh, Delicious And Honest Food Served With Care all found in Pizza House</h2>
                         <h4 className="d-md-none d-block">Fresh, Delicious And Honest Food Served With Care all found in Pizza House</h4>
@@ -102,7 +103,7 @@ class LandingPage extends Component{
               <div className="row mt-3 pb-5">
                  <div className="col-md-4">
                  <div className={`card ${classes.card}`} >
-                   <img src="https://luigispizza.jo/wp-content/uploads/2015/09/about-us-icon-e1442790830539.png" className={`card-img-top ${classes.cardImg}`} alt="..." />
+                   <span><i className={`fas fa-users ${classes.cardIcon}`}></i></span>
                    <div className="card-body">
                    <h5 className="card-title">About Us</h5>
                    <p className={`card-text ${classes.cardText}`}>he secret to our food? It’s pretty simple. Source fresh, quality ingredients. Prepare dishes with care and passion. Serve them with a warm smile. In other words, we take pride in what we make and how we share it. Even though we’ve grown a lot over the years, our mission is still the same:  Always the best food, made especially for you.</p>
@@ -111,7 +112,7 @@ class LandingPage extends Component{
                  </div>
                  <div className="col-md-4">
                  <div className={`card ${classes.card}`} >
-                   <img src="https://luigispizza.jo/wp-content/uploads/2015/09/pizza-icon-e1442790895743.png" className={`card-img-top ${classes.cardImg}`} alt="..." />
+                 <span><i className={`fas fa-pizza-slice ${classes.cardIcon}`}></i></span>
                    <div className="card-body">
                    <h5 className="card-title">Our Pizza</h5>
                    <p className={`card-text ${classes.cardText}`}>Our pizzas are wood oven baked using only the freshest ingredients, homemade pasta sauce and fresh dough made daily.</p>
@@ -120,7 +121,7 @@ class LandingPage extends Component{
                  </div>
                  <div className="col-md-4">
                  <div className={`card ${classes.card}`} >
-                   <img src="https://luigispizza.jo/wp-content/uploads/2015/09/delivery-icon-e1442790877661.png" className={`card-img-top ${classes.cardImg}`} alt="..." />
+                 <span><i className={`fas fa-truck ${classes.cardIcon}`}></i></span>
                    <div className="card-body">
                    <h5 className="card-title">Catering and Delivery</h5>
                    <p className={`card-text ${classes.cardText}`}>With our portable wood oven, we can cater any event, whether it be a private party or social gathering. And with our two cars, we offer an efficient delivery service.</p>
