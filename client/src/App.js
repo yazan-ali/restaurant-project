@@ -25,6 +25,7 @@ import Login from './login';
 import Cart from './indexCart';
 import LandingPage from './landingPage';
 import Axios from 'axios';
+import "./App.css"
 
 
 class App extends Component{
@@ -137,11 +138,11 @@ class App extends Component{
   render(){
    const { user } = this.state;
     return(
-      <div>
+      <div className="App">
         <Switch>
         <Container>
           <Navbar currentUser={user.user_name} userId={user.id} />
-          <Route exact path="/" render = { () => <LandingPage /> } />
+          <Route exact path="/pizza-house" render = { () => <LandingPage /> } />
           <Route exact path="/pizza-house/pizza" render={() => <PizzaList pizza={this.state.pizza} isAdmin={user.isAdmin} userId={user.id} handleDelete={this.handleDeletePizza}  />}/>
           <Route exact path="/pizza-house/pizza/type/beef" render={() => <BeefPizzaList pizza={this.state.beefPizza} />}/>
           <Route exact path="/pizza-house/pizza/type/chicken" render={() => <ChickenPizzaList pizza={this.state.chickenPizza} />}/>

@@ -53,7 +53,7 @@ class Navbar extends Component{
 </ul>
     </div>
         <nav id="main" className="navbar navbar-expand-lg navbar-dark main-nav mt-2 ">
-     <a className="navbar-brand" href="/">Pizza House</a>
+     <a className="navbar-brand" href="/pizza-house">Pizza House</a>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>
@@ -77,11 +77,9 @@ class Navbar extends Component{
       </li>
       </ul>
       <ul className="nav justify-content-end">
-      {this.props.userId &&
       <li className={"nav-item  d-none d-md-block "}>
         <a className="nav-link main-nav-link" href={`/cart/user/${this.props.userId}`}> <ShoppingCartIcon /> </a>
       </li>
-      }
     </ul>
     <ul className="nav navbar-nav navbar-right d-md-none">
     {!this.props.userId &&
