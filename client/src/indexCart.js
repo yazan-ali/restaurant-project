@@ -33,7 +33,7 @@ class Cart extends Component{
          items: this.state.items.filter(item => item._id !== id)
        });
      };
-
+     
     render(){
         return(
             <div>
