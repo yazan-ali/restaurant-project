@@ -23,6 +23,7 @@ import Register from './register';
 import AdminRegister from './adminRegister';
 import Login from './login'; 
 import Cart from './indexCart';
+import LandingPage from './landingPage';
 import Axios from 'axios';
 
 
@@ -140,7 +141,7 @@ class App extends Component{
         <Switch>
         <Container>
           <Navbar currentUser={user.user_name} userId={user.id} />
-          <Route exact path="/" render={() => <PizzaList pizza={this.state.pizza}  isAdmin={user.isAdmin} userId={user.id} handleDelete={this.handleDeletePizza} />}/>
+          <Route exact path="/" render = { () => <LandingPage /> } />
           <Route exact path="/pizza-house/pizza" render={() => <PizzaList pizza={this.state.pizza} isAdmin={user.isAdmin} userId={user.id} handleDelete={this.handleDeletePizza}  />}/>
           <Route exact path="/pizza-house/pizza/type/beef" render={() => <BeefPizzaList pizza={this.state.beefPizza} />}/>
           <Route exact path="/pizza-house/pizza/type/chicken" render={() => <ChickenPizzaList pizza={this.state.chickenPizza} />}/>
