@@ -44,7 +44,6 @@ class Cart extends Component{
     render(){
         return(
             <div>
-                 { this.state.items === 0 && 
                <Dialog
                open={this.state.loginDialog}
                onClose={this.handleClose}
@@ -64,7 +63,6 @@ class Cart extends Component{
                  <Button color="primary"><a style={{color:"#3f51b5", textDecoration:"none"}} href="/login">Login</a></Button>
                </DialogActions>
              </Dialog>
-              }
                 {this.state.items.map(item => (
                   <CartCard 
                   id = {item._id}

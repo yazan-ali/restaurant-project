@@ -149,7 +149,7 @@ class CartCard extends Component{
                       <Typography variant="h5" className={classes.drink}> {`Drink: ${drink}`} </Typography>
                      {starters.length > 0 ? (
                     <>
-                     <span>Starters: </span>
+                     <Typography variant="h5">Starters:</Typography>
                      <ul>
                           {starters.map(starter => (
                               <li> {starter} </li>

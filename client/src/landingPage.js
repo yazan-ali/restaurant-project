@@ -11,7 +11,8 @@ const style = theme => ({
       borderRadius: "15px",
       opacity: "0.7",
       [theme.breakpoints.down("md")]: {
-        marginLeft: "3.5rem",
+        marginLeft: "-1.5rem",
+        width: "80%"
       }
     },
     carousel: {
