@@ -107,88 +107,84 @@ class CartCard extends Component{
         const { qty } = this.state;
         return(
             <div>
-                    <div className={classes.root}>
-                        <div className={classes.header}>
-                        <div className={classes.img}> <img src={img} alt={name} /> </div>
-                        <div className={classes.name_description}>
-                            <div className={classes.name_qty}>
-                            <h3 className={classes.title}> {name} </h3>
-                            <div className={classes.qty_icon}>
-                                <AddCircleIcon onClick={() => this.handleQtyChange(+1)} style={{color:"#2AB840"}} className={classes.icon} />
-                                <Typography variant="h5" className={classes.qty}> {this.state.qty} </Typography>
-                                <RemoveCircleIcon onClick={() => this.handleQtyChange(-1)} color="secondary" className={classes.icon} />
-                            </div>
-                            </div>
-                            <Typography variant="h5" className={classes.description}> {description} </Typography>
-                            </div>
-                        </div>
-                        {this.props.mealType === "desserts" || this.props.mealType === "deals" ? "" : (
-                        <>
-                            {this.props.mealType === "pizza" ? (<div className={classes.size_type}>
-                            <FormControl className={classes.formControl}>
-                                <TextField
-                                  id="size"
-                                  label="Size"
-                                  defaultValue={size}
-                                  InputProps={{
-                                    readOnly: true,
-                                  }}
-                                />
-                                </FormControl>
-                                <FormControl className={classes.formControl}>
-                                <TextField
-                                  id="type"
-                                  label="Type"
-                                  defaultValue={type}
-                                  InputProps={{
-                                    readOnly: true,
-                                  }}
-                                />
-                                </FormControl>
-                            </div> ) : "" }
-                            <Typography variant="h5" className={classes.drink}> {`Drink: ${drink}`} </Typography>
-                            {/* <Typography variant="h5" className={classes.starters}> {`Starter: ${starters}`} </Typography> */}
-                           {starters.length > 0 ? (
-                           <>
-                           <span>Starters: </span>
-                            <ul>
-                                {starters.map(starter => (
-                                    <li> {starter} </li>
-                                ))}
-                            </ul>
-                            </>
-                             ) : ""}
-                            </>
-                         ) }
-                            <Typography variant="h5" className={classes.total}> {`Total: ${(total * qty)} JD`} </Typography>
-                        </div>
-                        <div>
-      {/* <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Open alert dialog
-      </Button> */}
-      <Dialog
-        open={qty === 0}
-        onClose={this.handleClose}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-      >
-        <DialogTitle id="alert-dialog-title">{"Conferm Order Delete"}</DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-            Are you sure you want to delete this order
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={this.handleClose} color="primary">
-            Cancel
-          </Button>
-          <Button onClick={this.handleDelete} color="primary">
-            Delete
-          </Button>
-        </DialogActions>
-      </Dialog>
-    </div>
-                       </div>
+             <div className={classes.root}>
+                 <div className={classes.header}>
+                  <div className={classes.img}> <img src={img} alt={name} /> </div>
+                 <div className={classes.name_description}>
+                      <div className={classes.name_qty}>
+                      <h3 className={classes.title}> {name} </h3>
+                      <div className={classes.qty_icon}>
+                         <AddCircleIcon onClick={() => this.handleQtyChange(+1)} style={{color:"#2AB840"}} className={classes.icon} />
+                         <Typography variant="h5" className={classes.qty}> {this.state.qty} </Typography>
+                          <RemoveCircleIcon onClick={() => this.handleQtyChange(-1)} color="secondary" className={classes.icon} />
+                     </div>
+                     </div>
+                     <Typography variant="h5" className={classes.description}> {description} </Typography>
+                     </div>
+                 </div>
+                 {this.props.mealType === "desserts" || this.props.mealType === "deals" ? "" : (
+                 <>
+                     {this.props.mealType === "pizza" ? (<div className={classes.size_type}>
+                     <FormControl className={classes.formControl}>
+                         <TextField
+                           id="size"
+                           label="Size"
+                           defaultValue={size}
+                           InputProps={{
+                              readOnly: true,
+                           }}
+                         />
+                         </FormControl>
+                         <FormControl className={classes.formControl}>
+                          <TextField
+                           id="type"
+                           label="Type"
+                            defaultValue={type}
+                           InputProps={{
+                             readOnly: true,
+                            }}
+                          />
+                          </FormControl>
+                      </div> ) : "" }
+                      <Typography variant="h5" className={classes.drink}> {`Drink: ${drink}`} </Typography>
+                     {starters.length > 0 ? (
+                    <>
+                     <span>Starters: </span>
+                     <ul>
+                          {starters.map(starter => (
+                              <li> {starter} </li>
+                         ))}
+                     </ul>
+                     </>
+                       ) : ""}
+                     </>
+                  ) }
+                      <Typography variant="h5" className={classes.total}> {`Total: ${(total * qty)} JD`} </Typography>
+                 </div>
+                 <div>
+                    <Dialog
+                     open={qty === 0}
+                     onClose={this.handleClose}
+                      aria-labelledby="alert-dialog-title"
+                     aria-describedby="alert-dialog-description"
+                    >
+                     <DialogTitle id="alert-dialog-title">{"Conferm Order Delete"}</DialogTitle>
+                      <DialogContent>
+                       <DialogContentText id="alert-dialog-description">
+                          Are you sure you want to delete this order
+                        </DialogContentText>
+                      </DialogContent>
+                      <DialogActions>
+                       <Button onClick={this.handleClose} color="primary">
+                         Cancel
+                        </Button>
+                        <Button onClick={this.handleDelete} color="primary">
+                          Delete
+                        </Button>
+                      </DialogActions>
+                    </Dialog>
+                  </div>
+                 </div>
         );
     };
 };
