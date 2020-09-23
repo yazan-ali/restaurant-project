@@ -47,9 +47,9 @@ class LandingPage extends Component{
                   </ol>
                   <div style={{borderRadius:"10px"}} className="carousel-inner">
                     <div className="carousel-item active">
-                    <a href="/pizza-house">
+                    <a href="/">
                       <div>
-                      <img style={{height: "500px"}} src="https://images.unsplash.com/photo-1595708684082-a173bb3a06c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1045&q=80" className="d-block w-100" alt="carousel-img-1"/>
+                      <img style={{height: "500px"}} src="https://images.pexels.com/photos/3826016/pexels-photo-3826016.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" className="d-block w-100" alt="carousel-img-1"/>
                       <div className={`carousel-caption ${classes.carouselCap}`}>
                         <h2 className="d-none d-md-block">Fresh, Delicious And Honest Food Served With Care all found in Pizza House</h2>
                         <h4 className="d-md-none d-block">Fresh, Delicious And Honest Food Served With Care all found in Pizza House</h4>
@@ -107,7 +107,7 @@ class LandingPage extends Component{
                    <span><i className={`fas fa-users ${classes.cardIcon}`}></i></span>
                    <div className="card-body">
                    <h5 className="card-title">About Us</h5>
-                   <p className={`card-text ${classes.cardText}`}>he secret to our food? It’s pretty simple. Source fresh, quality ingredients. Prepare dishes with care and passion. Serve them with a warm smile. In other words, we take pride in what we make and how we share it. Even though we’ve grown a lot over the years, our mission is still the same:  Always the best food, made especially for you.</p>
+                   <p className={`card-text ${classes.cardText}`}>The secret to our food? It’s pretty simple. Source fresh, quality ingredients. Prepare dishes with care and passion. Serve them with a warm smile. In other words, we take pride in what we make and how we share it. Even though we’ve grown a lot over the years, our mission is still the same:  Always the best food, made especially for you.</p>
                    </div>
                 </div>
                  </div>
