@@ -5,10 +5,10 @@ const userSchema = new mongoose.Schema({
     username: String,
     user_name: String,
     password: String,
-    isAdmin:{
-        type:Boolean,
-        default:false
-    }	
+    isAdmin: {
+        type: Boolean,
+        default: false
+    }
 });
 
 userSchema.plugin(passportMongoose);

@@ -4,8 +4,8 @@ export const pizza = [
         img: "https://storage.eu.content-cdn.io/cdn-cgi/image/%7Bwidth%7D,%7Bheight%7D,quality=75,format=auto,fit=cover%20,g=top/am-resources/c79bc8ac-4c69-460f-829b-4d40568d0cca/Images/ProductImages/Large/TROPICAL_HAWAIIN_showcase-min1.png",
         discription: "Tropical Hawaiian Complete Juicy Beef, Mozzarella cheese and Juicy pineapples.",
         // price: 5.750,
-        sizes: ["small","medium","larg"],
-        types: ["Pan","San Fransisco","Thin N Crispy","Stuffed Crust","Cheesy Bites"],
+        sizes: ["small", "medium", "larg"],
+        types: ["Pan", "San Fransisco", "Thin N Crispy", "Stuffed Crust", "Cheesy Bites"],
         price: {
             noSelect: "5.750",
             midPan: "6.000",
@@ -30,8 +30,8 @@ export const pizza = [
         img: "https://storage.eu.content-cdn.io/cdn-cgi/image/%7Bwidth%7D,%7Bheight%7D,quality=75,format=auto,fit=cover,g=top/am-resources/c79bc8ac-4c69-460f-829b-4d40568d0cca/Images/ProductImages/Large/Hot_Stuff_Beef_showcase-min1.png",
         discription: "Turn up the heat with juicy Beef, Sliced onions, Tomatoes and Spicy green chilies",
         // price: 5.750,
-        sizes: ["small","medium","larg"],
-        types: ["Pan","San Fransisco","Thin N Crispy","Stuffed Crust","Cheesy Bites"],
+        sizes: ["small", "medium", "larg"],
+        types: ["Pan", "San Fransisco", "Thin N Crispy", "Stuffed Crust", "Cheesy Bites"],
         price: {
             noSelect: "5.750",
             midPan: "6.000",
@@ -39,7 +39,7 @@ export const pizza = [
             midThin: "6.000",
             midStuffed: "6.750",
             midCheesy: "6.750",
-                        largPan: "8.250",
+            largPan: "8.250",
             largSan: "8.250",
             largThin: "8.250",
             largStuffed: "9.250",
@@ -49,7 +49,7 @@ export const pizza = [
             smallThin: "4.000",
             smallStuffed: "5.000",
             smallCheesy: "5.000",
-        } 
+        }
     }
 ];
 
@@ -66,7 +66,7 @@ export const pasta = [
         img: "https://storage.eu.content-cdn.io/cdn-cgi/image/%7Bwidth%7D,%7Bheight%7D,quality=75,format=auto,fit=cover,g=top/am-resources/c79bc8ac-4c69-460f-829b-4d40568d0cca/Images/ProductImages/Large/Penne_chicken_alfredo_showcase.png",
         discription: "An old italian favourite of penne backed with fresh mushrooms, spinach and chicken strips, topped with mozzarella and parmesan cheese.",
         price: "4.000",
-    }  
+    }
 ];
 
 export let addOnsOption = [

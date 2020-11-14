@@ -1,31 +1,31 @@
-var express=require("express");
-var router=express.Router();
-var Pasta=require("../models/pastaModel");
+var express = require("express");
+var router = express.Router();
+var Pasta = require("../models/pastaModel");
 
 // index route
 
-router.get("/pasta", (req,res) => {
-	Pasta.find({},function(err,foundedPasta){
-		if(err){
+router.get("/pasta", (req, res) => {
+	Pasta.find({}, function (err, foundedPasta) {
+		if (err) {
 			console.log(err);
-		} else{
-            res.send(foundedPasta);
+		} else {
+			res.send(foundedPasta);
 		}
 	});
 });
 
 // create route
-router.post("/pasta", (req,res) => {
-	var newPasta={
-	pasta_img:req.body.img,
-	pasta_name:req.body.name,
-	pasta_description:req.body.description,
-	pasta_price:req.body.price
+router.post("/pasta", (req, res) => {
+	var newPasta = {
+		pasta_img: req.body.img,
+		pasta_name: req.body.name,
+		pasta_description: req.body.description,
+		pasta_price: req.body.price
 	}
-	Pasta.create(newPasta,function(err,newPasta){
-		if(err){
+	Pasta.create(newPasta, function (err, newPasta) {
+		if (err) {
 			console.log(err);
-		} else{
+		} else {
 			console.log(newPasta);
 			res.redirect("/pasta");
 		}
@@ -34,17 +34,17 @@ router.post("/pasta", (req,res) => {
 
 
 // update route
-router.put("/pasta/:id", (req,res) => {
-		var updatedPasta={
-	pasta_img:req.body.img,
-	pasta_name:req.body.name,
-	pasta_description:req.body.description,
-	pasta_price:req.body.price
+router.put("/pasta/:id", (req, res) => {
+	var updatedPasta = {
+		pasta_img: req.body.img,
+		pasta_name: req.body.name,
+		pasta_description: req.body.description,
+		pasta_price: req.body.price
 	}
-	Pasta.findByIdAndUpdate(req.params.id,updatedPasta,function(err,updatedPasta){
-		if(err){
+	Pasta.findByIdAndUpdate(req.params.id, updatedPasta, function (err, updatedPasta) {
+		if (err) {
 			console.log(err);
-		} else{
+		} else {
 			console.log(updatedPasta);
 			res.redirect("/pasta");
 		}
@@ -53,14 +53,14 @@ router.put("/pasta/:id", (req,res) => {
 
 // destroy route
 
-router.delete("/pasta/:id", (req,res) =>{
-	Pasta.findByIdAndDelete(req.params.id,function(err){
-		if(err){
+router.delete("/pasta/:id", (req, res) => {
+	Pasta.findByIdAndDelete(req.params.id, function (err) {
+		if (err) {
 			console.log(err);
-		} else{
+		} else {
 			res.redirect("/pasta");
 		}
 	})
 });
 
-module.exports=router;
+module.exports = router;
