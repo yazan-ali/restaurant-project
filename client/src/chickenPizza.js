@@ -62,6 +62,8 @@ class ChickenPizzaList extends Component {
               sizes={[pizza.pizza_size.size_1, pizza.pizza_size.size_2, pizza.pizza_size.size_3]}
               types={[pizza.dough_type.type_1, pizza.dough_type.type_2, pizza.dough_type.type_3, pizza.dough_type.type_4, pizza.dough_type.type_5, pizza.dough_type.type_6]}
               selectItem={true}
+              isAdmin={this.props.isAdmin}
+              userId={this.props.userId}
               key={pizza._id}
             />
           ))}
