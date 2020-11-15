@@ -61,7 +61,11 @@ class VegetarianPizzaList extends Component {
               price={pizza.pizza_price}
               sizes={[pizza.pizza_size.size_1, pizza.pizza_size.size_2, pizza.pizza_size.size_3]}
               types={[pizza.dough_type.type_1, pizza.dough_type.type_2, pizza.dough_type.type_3, pizza.dough_type.type_4, pizza.dough_type.type_5, pizza.dough_type.type_6]}
+              showDialog={true}
               selectItem={true}
+              index={i}
+              formType="pizza"
+              handleDelete={handleDelete}
               isAdmin={this.props.isAdmin}
               userId={this.props.userId}
               key={pizza._id}
