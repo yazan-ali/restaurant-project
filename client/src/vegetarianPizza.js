@@ -31,13 +31,9 @@ const styles = theme => ({
 
 
 class VegetarianPizzaList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { vegetarianPizza: [] }
-  }
 
   render() {
-    const { classes } = this.props;
+    const { classes, handleDelete } = this.props;
     return (
       <>
         <div className="mt-3">
@@ -52,7 +48,7 @@ class VegetarianPizzaList extends Component {
         <div>
         </div>
         <div className={classes.root}>
-          {this.props.pizza.map((pizza) => (
+          {this.props.pizza.map((pizza, i) => (
             <Card
               id={pizza._id}
               img={pizza.pizza_img}

@@ -147,9 +147,9 @@ class App extends Component {
             <Navbar currentUser={user.user_name} userId={user.id} />
             <Route exact path="/" render={() => <LandingPage />} />
             <Route exact path="/pizza-house/pizza" render={() => <PizzaList pizza={this.state.pizza} isAdmin={user.isAdmin} userId={user.id} handleDelete={this.handleDeletePizza} />} />
-            <Route exact path="/pizza-house/pizza/type/beef" render={() => <BeefPizzaList pizza={this.state.beefPizza} isAdmin={user.isAdmin} userId={user.id} />} />
-            <Route exact path="/pizza-house/pizza/type/chicken" render={() => <ChickenPizzaList pizza={this.state.chickenPizza} isAdmin={user.isAdmin} userId={user.id} />} />
-            <Route exact path="/pizza-house/pizza/type/vegetarian" render={() => <VegetarianPizzaList pizza={this.state.vegetarianPizza} isAdmin={user.isAdmin} userId={user.id} />} />
+            <Route exact path="/pizza-house/pizza/type/beef" render={() => <BeefPizzaList pizza={this.state.beefPizza} isAdmin={user.isAdmin} userId={user.id} handleDelete={this.handleDeletePizza} />} />
+            <Route exact path="/pizza-house/pizza/type/chicken" render={() => <ChickenPizzaList pizza={this.state.chickenPizza} isAdmin={user.isAdmin} userId={user.id} handleDelete={this.handleDeletePizza} />} />
+            <Route exact path="/pizza-house/pizza/type/vegetarian" render={() => <VegetarianPizzaList pizza={this.state.vegetarianPizza} isAdmin={user.isAdmin} userId={user.id} handleDelete={this.handleDeletePizza} />} />
             <Route exact path="/pizza/new/add" render={() => <CreatePizza isAdmin={user.isAdmin} />} />
             {this.state.pizza.map((pizza, i) => (
               <Route exact path={`/pizza/edit${i}/:id`} render={() => <EditPizza isAdmin={user.isAdmin}
