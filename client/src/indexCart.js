@@ -21,7 +21,7 @@ class Cart extends Component {
       .then(res => {
         this.setState({ items: res.data })
       });
-    if (this.props.userId) {
+    if (this.props.userId === []) {
       this.setState({ loginDialog: true })
     }
   }
