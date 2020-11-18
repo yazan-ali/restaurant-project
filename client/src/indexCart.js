@@ -21,6 +21,11 @@ class Cart extends Component {
       .then(res => {
         this.setState({ items: res.data })
       });
+    setTimeout(() => {
+      if (!this.props.userId) {
+        this.setState({ loginDialog: true })
+      }
+    }, 1500)
   }
 
   handleClose() {
@@ -54,13 +59,6 @@ class Cart extends Component {
             handleDelete={this.handleDelete}
           />
         ))}
-        {
-          setTimeout(() => {
-            if (!this.props.userId) {
-              this.setState({ loginDialog: true })
-            }
-          }, 1500)
-        }
         <Dialog
           open={this.state.loginDialog}
           onClose={this.handleClose}
