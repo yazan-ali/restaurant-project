@@ -94,7 +94,7 @@ class Login extends Component {
           </Avatar>
           <Typography variant="h5"> Login </Typography>
           {this.state.showAlert && <Alert severity="error">Email address or password is incorrect</Alert>}
-          {this.state.showAlert2 && <Alert severity="error">You have logged in successfully</Alert>}
+          {this.state.showAlert2 && <Alert severity="success">You have logged in successfully</Alert>}
           <form className={classes.form} onSubmit={this.handleSubmit} >
             <FormControl margin="normal" required fullWidth>
               <InputLabel htmlFor="email" > Email </InputLabel>
