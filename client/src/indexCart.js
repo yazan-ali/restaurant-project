@@ -25,7 +25,7 @@ class Cart extends Component {
       if (!this.props.userId) {
         this.setState({ loginDialog: true })
       }
-    }, 1500)
+    }, 1000)
   }
 
   handleClose() {
