@@ -16,7 +16,7 @@ class Cart extends Component {
     this.handleClose = this.handleClose.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     Axios.get(`https://limitless-beyond-06124.herokuapp.com/cart/${this.props.match.params.id}`)
       .then(res => {
         this.setState({ items: res.data })
