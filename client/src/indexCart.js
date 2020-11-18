@@ -14,11 +14,12 @@ class Cart extends Component {
     this.state = { items: [], loginDialog: true }
     this.handleDelete = this.handleDelete.bind(this);
     this.handleClose = this.handleClose.bind(this);
+  }
+
+  componentWillMount() {
     Axios.get(`https://limitless-beyond-06124.herokuapp.com/cart/${this.props.match.params.id}`)
       .then(res => {
-        if (res.data.length > 0) {
-          this.setState({ items: res.data })
-        }
+        this.setState({ items: res.data })
       });
   }
 
