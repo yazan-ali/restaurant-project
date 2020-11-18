@@ -12,6 +12,7 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import IconButton from '@material-ui/core/IconButton';
+import Alert from '@material-ui/lab/Alert';
 
 const styles = theme => ({
   main: {
@@ -47,7 +48,9 @@ class Login extends Component {
     this.state = {
       username: "",
       password: "",
-      showPassword: false
+      showPassword: false,
+      showAlert: false,
+      showAlert2: false,
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -71,12 +74,22 @@ class Login extends Component {
       },
       withCredentials: true,
       url: "https://limitless-beyond-06124.herokuapp.com/login",
-    }).then((res) => console.log(res));
+    }).then(res => {
+      if (res.data === "No User Exists") {
+        this.setState({ showAlert: true });
+        this.setState({ showAlert2: false });
+      } else {
+        this.setState({ showAlert2: true });
+        this.setState({ showAlert: false });
+      }
+    });
   }
   render() {
     const { classes } = this.props;
     return (
       <main className={classes.main}>
+        {this.state.showAlert && <Alert severity="error">Email address or password is incorrect</Alert>}
+        {this.state.showAlert2 && <Alert severity="error">You have logged in successfully</Alert>}
         <Paper className={classes.paper}>
           <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
