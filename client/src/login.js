@@ -88,13 +88,13 @@ class Login extends Component {
     const { classes } = this.props;
     return (
       <main className={classes.main}>
-        {this.state.showAlert && <Alert severity="error">Email address or password is incorrect</Alert>}
-        {this.state.showAlert2 && <Alert severity="error">You have logged in successfully</Alert>}
         <Paper className={classes.paper}>
           <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography variant="h5"> Login </Typography>
+          {this.state.showAlert && <Alert severity="error">Email address or password is incorrect</Alert>}
+          {this.state.showAlert2 && <Alert severity="error">You have logged in successfully</Alert>}
           <form className={classes.form} onSubmit={this.handleSubmit} >
             <FormControl margin="normal" required fullWidth>
               <InputLabel htmlFor="email" > Email </InputLabel>
