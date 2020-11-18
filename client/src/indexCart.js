@@ -11,7 +11,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 class Cart extends Component {
   constructor(props) {
     super(props);
-    this.state = { items: [], loginDialog: true }
+    this.state = { items: [], loginDialog: false }
     this.handleDelete = this.handleDelete.bind(this);
     this.handleClose = this.handleClose.bind(this);
   }
@@ -57,28 +57,29 @@ class Cart extends Component {
         {
           setTimeout(() => {
             if (!this.props.userId) {
-              <Dialog
-                open={this.state.loginDialog}
-                onClose={this.handleClose}
-                aria-labelledby="alert-dialog-title"
-                aria-describedby="alert-dialog-description"
-              >
-                <DialogTitle id="alert-dialog-title">{""}</DialogTitle>
-                <DialogContent>
-                  <DialogContentText id="alert-dialog-description">
-                    You should be logged in to see the shopping cart
-                 </DialogContentText>
-                </DialogContent>
-                <DialogActions>
-                  <Button onClick={this.handleClose} color="primary">
-                    Cancel
-                 </Button>
-                  <Button color="primary"><a style={{ color: "#3f51b5", textDecoration: "none" }} href="/login">Login</a></Button>
-                </DialogActions>
-              </Dialog>
+              this.setState({ loginDialog: true })
             }
           }, 1500)
         }
+        <Dialog
+          open={this.state.loginDialog}
+          onClose={this.handleClose}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+        >
+          <DialogTitle id="alert-dialog-title">{""}</DialogTitle>
+          <DialogContent>
+            <DialogContentText id="alert-dialog-description">
+              You should be logged in to see the shopping cart
+                 </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={this.handleClose} color="primary">
+              Cancel
+                 </Button>
+            <Button color="primary"><a style={{ color: "#3f51b5", textDecoration: "none" }} href="/login">Login</a></Button>
+          </DialogActions>
+        </Dialog>
       </div>
     );
   };
